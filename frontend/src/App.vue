@@ -1,0 +1,12 @@
+<script setup lang="ts">
+import Navbar from "./components/Navbar.vue";
+import Footer from "./components/Footer.vue";
+</script>
+
+<template>
+  <Navbar />
+<div class="grid place-items-center lg:max-w-screen-2xl gap-8 mx-auto py-10">
+    <RouterView/>
+  </div>
+  <Footer />
+</template>

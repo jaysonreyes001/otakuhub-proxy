@@ -1,0 +1,241 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Buttons */
+    .btn {
+        @apply relative flex items-center justify-center rounded-md border px-5 py-2 text-sm font-semibold shadow-[0_10px_20px_-10px] outline-none transition duration-300 hover:shadow-none;
+    }
+    .btn-lg {
+        @apply px-7 py-2.5 text-base;
+    }
+    .btn-sm {
+        @apply px-2.5 py-1.5 text-xs;
+    }
+    .btn[disabled] {
+        @apply cursor-not-allowed opacity-60;
+    }
+
+    .btn-primary {
+        @apply border-primary bg-primary text-white shadow-primary/60;
+    }
+    .btn-outline-primary {
+        @apply border-primary text-primary shadow-none hover:bg-primary hover:text-white;
+    }
+
+    .btn-secondary {
+        @apply border-secondary bg-secondary text-white shadow-secondary/60;
+    }
+    .btn-outline-secondary {
+        @apply border-secondary text-secondary shadow-none hover:bg-secondary hover:text-white;
+    }
+
+    .btn-success {
+        @apply border-success bg-success text-white shadow-success/60;
+    }
+    .btn-outline-success {
+        @apply border-success text-success shadow-none hover:bg-success hover:text-white;
+    }
+
+    .btn-danger {
+        @apply border-danger bg-danger text-white shadow-danger/60;
+    }
+    .btn-outline-danger {
+        @apply border-danger text-danger shadow-none hover:bg-danger hover:text-white;
+    }
+
+    .btn-warning {
+        @apply border-warning bg-warning text-white shadow-warning/60;
+    }
+    .btn-outline-warning {
+        @apply border-warning text-warning shadow-none hover:bg-warning hover:text-white;
+    }
+
+    .btn-info {
+        @apply border-info bg-info text-white shadow-info/60;
+    }
+    .btn-outline-info {
+        @apply border-info text-info shadow-none hover:bg-info hover:text-white;
+    }
+
+    .btn-dark {
+        @apply border-dark bg-dark text-white shadow-dark/60;
+    }
+
+    .btn-outline-dark {
+        @apply border-dark text-dark shadow-none hover:bg-dark hover:text-white;
+    }
+
+    .btn-gradient {
+        @apply bg-gradient-to-r from-[#EF1262] to-[#4361EE] hover:to-[#EF1262] hover:from-[#4361EE] text-white;
+    }
+
+    /* Badge */
+    .badge {
+        @apply relative my-1 rounded border border-transparent px-2 py-0.5 text-xs font-semibold text-white;
+    }
+    .badge-outline-primary {
+        @apply border-primary text-primary hover:bg-primary-light dark:hover:bg-primary dark:hover:text-white-light;
+    }
+    .badge-outline-secondary {
+        @apply border-secondary text-secondary hover:bg-secondary-light dark:hover:bg-secondary dark:hover:text-white-light;
+    }
+    .badge-outline-success {
+        @apply border-success text-success hover:bg-success-light dark:hover:bg-success dark:hover:text-white-light;
+    }
+    .badge-outline-danger {
+        @apply border-danger text-danger hover:bg-danger-light dark:hover:bg-danger dark:hover:text-white-light;
+    }
+    .badge-outline-warning {
+        @apply border-warning text-warning hover:bg-warning-light dark:hover:bg-warning dark:hover:text-white-light;
+    }
+    .badge-outline-info {
+        @apply border-info text-info hover:bg-info-light dark:hover:bg-info dark:hover:text-white-light;
+    }
+    .badge-outline-dark {
+        @apply border-dark text-dark hover:bg-dark-light dark:hover:bg-dark dark:hover:text-white-light;
+    }
+
+/* *=========== Default theme =========== */
+/* @layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --ring: 240 10% 3.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --ring: 240 4.9% 83.9%;
+  }
+} */
+
+/* *=========== Orange theme =========== */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 20 14.3% 4.1%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 20 14.3% 4.1%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14.3% 4.1%;
+
+    --primary: 24.6 95% 53.1%;
+    --primary-foreground: 60 9.1% 97.8%;
+
+    --secondary: 60 4.8% 95.9%;
+    --secondary-foreground: 24 9.8% 10%;
+
+    --muted: 60 4.8% 95.9%;
+    --muted-foreground: 25 5.3% 44.7%;
+
+    --accent: 60 4.8% 95.9%;
+    --accent-foreground: 24 9.8% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 9.1% 97.8%;
+
+    --border: 20 5.9% 90%;
+    --input: 20 5.9% 90%;
+    --ring: 24.6 95% 53.1%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 20 14.3% 4.1%;
+    --foreground: 60 9.1% 97.8%;
+
+    --card: 24 9.8% 8%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 20 14.3% 4.1%;
+    --popover-foreground: 60 9.1% 97.8%;
+
+    --primary: 20.5 90.2% 48.2%;
+    --primary-foreground: 60 9.1% 97.8%;
+
+    --secondary: 12 6.5% 15.1%;
+    --secondary-foreground: 60 9.1% 97.8%;
+
+    --muted: 12 6.5% 15.1%;
+    --muted-foreground: 24 5.4% 63.9%;
+
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 60 9.1% 97.8%;
+
+    --destructive: 0 72.2% 50.6%;
+    --destructive-foreground: 60 9.1% 97.8%;
+
+    --border: 12 6.5% 15.1%;
+    --input: 12 6.5% 15.1%;
+    --ring: 20.5 90.2% 48.2%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
