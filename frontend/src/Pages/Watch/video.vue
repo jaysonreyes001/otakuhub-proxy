@@ -69,7 +69,7 @@ const timeToSeconds = (time) => {
 const render_video = () => {
   if (Hls.isSupported()) {
       hls.value = new Hls();
-      hls.value.loadSource(`https://otaku-proxy.vercel.app/proxy?url=${encodeURIComponent(source.value)}`);
+      hls.value.loadSource(`https://otakuhub-stream-proxy.vercel.app/proxy?url=${encodeURIComponent(source.value)}`);
       hls.value.attachMedia(video.value);
       hls.value.on(Hls.Events.MANIFEST_PARSED, async () => {
         const track = video.value.addTextTrack('subtitles', 'English', 'en');
@@ -100,7 +100,6 @@ function clearVideo(){
 }
 onMounted(()=>{
   clearVideo();
-  console.log(props.episode_details,"12")
   if(props.episode_details.source.length > 0){
     const episode_details = props.episode_details;
     source.value = episode_details.source[0].url;
