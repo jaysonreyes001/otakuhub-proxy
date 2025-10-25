@@ -26,6 +26,8 @@ app.get("/proxy", async (req, res) => {
       },
     });
 
+    return res.send(response);
+
     if (!response.ok) {
       return res.status(response.status).send("Failed to fetch target");
     }
