@@ -77,7 +77,7 @@
           <span class="inline-block h-[30px] mt-1 w-[5px] bg-primary "></span>
            <h1 class="text-lg font-semibold">TRAILER</h1>
         </div>
-          <iframe :src="anime.mal_details.trailer.embed_url" class="w-full lg:w-1/2 h-[400px]"></iframe>
+          <iframe :src="anime.mal_details.trailer.embed_url" class="mt-5 w-full lg:w-1/2 h-[400px]"></iframe>
       </div>
 
       <div class="mt-20">
@@ -95,7 +95,7 @@
             class="mySwiper relative mt-5"
             :breakpoints="{
                 '0': {
-                    slidesPerView: 3,
+                    slidesPerView: 2,
                     spaceBetween:10
                 },
                 '568': {
