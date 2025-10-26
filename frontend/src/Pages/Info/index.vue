@@ -113,7 +113,7 @@
             }"
         >
           <swiper-slide v-for="(data,index) in anime.details.recommendations" :key="index">
-              <router-link :to="{name:'watch',params:{id:data.id}}">
+              <router-link :to="{name:'info',params:{id:data.id}}">
                 <div class="relative">
                   <img :src="data.image" :alt="data.title" class="rounded h-[200px] sm:h-[300px] lg:h-[300px] w-full overflow-hidden" />
                   <div class="mt-2">
@@ -131,6 +131,11 @@
               </swiper-slide>
           </swiper>
       </div>
+    </div>
+    <div class="relative h-[400px] lg:h-[950px]" v-else>
+        <span class="absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] ">
+          <span class="animate-spin border-2 border-white border-l-transparent rounded-full w-20 h-20  inline-block  "></span>
+        </span>
     </div>
   </div>
 </template>
