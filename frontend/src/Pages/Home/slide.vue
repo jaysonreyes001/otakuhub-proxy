@@ -57,28 +57,28 @@ onMounted(()=>{
                 class="mySwiper h-[400px] md:h-[900px] mt-0 md:mt-10">
             <swiper-slide class="relative" v-for="(spotlight,index) in spotlight_list" :key="index">
               <div lass="relative">
-                <img :src="spotlight.banner" class=" !h-[500px] md:!h-[900px] overflow-hidden" alt="image" />
+                <img :src="spotlight.banner" class=" !h-[500px] md:!h-[900px] overflow-hidden" :alt="spotlight.title" />
                     <div class="absolute top-0 left-0 h-full w-full inset-shadow-custom"></div>
                     <div class="absolute top-0 left-0 h-full w-full inset-shadow-custom2"></div>
                     <div class="absolute top-0 left-0 w-full h-full ">
-                      <div class="flex items-center h-full  w-[250px] md:w-[600px]">
-                        <div class="ml-10 space-y-5">
-                          <p class="text-primary font-semibold text-md lg:text-xl ">#{{ index +1 }} Spotlight</p>
-                          <h1 class="text-xl lg:text-4xl dark:text-white text-primary font-bold">{{ spotlight.title }}</h1>
+                      <div class="flex items-center h-full  w-[300px] md:w-[600px]">
+                        <div class="ml-10 space-y-3 md:space-y-5">
+                          <p class="text-primary font-semibold text-md lg:text-xl">#{{ index +1 }} Spotlight</p>
+                          <h1 class="text-sm lg:text-4xl dark:text-white text-primary font-bold">{{ spotlight.title }}</h1>
                           <div class="flex gap-x-5">
-                            <div class="flex items-center text-gray-200" v-if="spotlight.type">
-                              <Icon icon="mdi:play" class="text-xl"/>
+                            <div class="flex items-center text-gray-200 text-xs md:text-xl" v-if="spotlight.type">
+                              <Icon icon="mdi:play" class="text-base md:text-xl"/>
                               {{ spotlight.type }}
                             </div>
-                            <div class="flex items-center text-gray-200" v-if="spotlight.duration">
-                              <Icon icon="mdi:clock" class="text-xl"/>
+                            <div class="flex items-center text-gray-200 text-xs md:text-xl" v-if="spotlight.duration">
+                              <Icon icon="mdi:clock" class="text-xs  md:text-xl"/>
                               {{ spotlight.duration }}
                             </div>
-                            <div class="badge badge-outline-primary" v-if="spotlight.quality">
+                            <div class="badge badge-outline-primary text-xs md:text-lg" v-if="spotlight.quality">
                               {{ spotlight.quality }}
                             </div>
                           </div>
-                          <p class="text-gray-200 line-clamp-3 md:line-clamp-4">{{ spotlight.description }}</p>
+                          <p class="text-gray-200 text-xs md:text-lg line-clamp-3 md:line-clamp-4">{{ spotlight.description }}</p>
                           <div>
                             <router-link :to="{name:'watch',params:{id:spotlight.id}}">
                               <button class="btn btn-outline-primary">

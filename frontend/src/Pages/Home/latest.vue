@@ -68,7 +68,7 @@ onMounted(()=>{
             <router-link class="h-full" :to="{name:'watch',params:{id:data.id,episode_id:data.sub}}">
               <div>
                   <div class="image-container rounded w-full relative overflow-hidden block bg-secondary pb-[150%]">
-                    <img :src="data.image" class="absolute z-10 top-0 left-0 right-0 bottom-0 h-full w-full object-cover"  alt="image" />
+                    <img :src="data.image" class="absolute z-10 top-0 left-0 right-0 bottom-0 h-full w-full object-cover"  :alt="data.title" />
                 </div>
                 <p class="break-words text-sm mt-2">{{ data.title }}</p>
                 <div class="flex justify-between ">
@@ -76,7 +76,6 @@ onMounted(()=>{
                   <p class="text-gray-400 text-xs mt-1">{{ data.sub > 1 ? 'Sub' : '' }} 
                     {{ data.sub > 1 && data.dub > 1 ? '|' :'' }} 
                     {{ data.dub > 1 ? 'Dub' : '' }}  
-                    | {{ data.duration }}
                   </p>
                 </div>
               </div>
