@@ -135,13 +135,13 @@
           class=" p-2 cursor-pointer transition dark:hover:bg-primary hover:bg-slate-100" v-for="(episode,index) in episode_list">
             <div class="flex  space-x-4 rtl:space-x-reverse">
                 <div class="shrink-0">
-                    <img class=" w-[60px] md:w-[180px] h-[50px] md:h-[80px] object-cover" :src="anime_details.image"  alt="Neil image">
+                    <img class=" w-[60px] md:w-[180px] h-full md:h-[80px] object-cover" :src="anime_details.image"  alt="Neil image">
                 </div>
                 <div class="flex-1 min-w-0 mt-2">
-                    <p :class="episode.number == episode_details.number ? 'text-black' : 'dark:text-white  text-gray-900'" class="text-base font-medium line-clamp-2">
+                    <p :class="episode.number == episode_details.number ? 'text-black' : 'dark:text-white  text-gray-900'" class="text-xs md:text-base font-medium line-clamp-2">
                       EP{{episode.number}} - {{episode.title}}
                     </p>
-                    <p :class="episode.number == episode_details.number ? ' text-gray-500 dark:text-gray-200' : 'dark:text-gray-400  text-gray-500'" class="text-sm truncate">
+                    <p :class="episode.number == episode_details.number ? ' text-gray-500 dark:text-gray-200' : 'dark:text-gray-400  text-gray-500'" class="text-xs md:text-sm truncate">
                         {{episode.isSubbed ? 'Sub' : ''}} {{episode.isSubbed && episode.isDubbed ? '|' : ''}} {{episode.isDubbed ? 'Dub' : ''}}
                     </p>
                 </div>
