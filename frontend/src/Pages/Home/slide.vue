@@ -82,7 +82,7 @@ onMounted(()=>{
                           <p class="text-gray-200 text-xs md:text-lg line-clamp-3 md:line-clamp-4">{{ spotlight.description }}</p>
                           <div>
                             <router-link :to="{name:'info',params:{id:spotlight.id}}">
-                              <button class="btn btn-primary">
+                              <button class="btn btn-primary btn-sm sm:btn-lg">
                                 <Icon icon="mdi:play" class="text-xl mr-1"/>
                                   Start Watching
                               </button>

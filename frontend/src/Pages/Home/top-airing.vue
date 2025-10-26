@@ -66,7 +66,7 @@ onMounted(()=>{
             }"
         >
             <swiper-slide v-for="(data,index) in data_list" :key="index">
-                <router-link :to="{name:'watch',params:{id:data.id}}">
+                <router-link :to="{name:'info',params:{id:data.id}}">
                   <div class="relative">
                     <img :src="data.image" :alt="data.title" class="rounded h-[200px] sm:h-[300px] lg:h-[300px] w-full overflow-hidden" />
                     <div class="mt-2">
