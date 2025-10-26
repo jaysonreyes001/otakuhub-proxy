@@ -119,7 +119,7 @@
               </div>
           </div>
         </div>
-          <button @click="show_more = !show_more" class="text-xs">Show {{show_more ? 'less' : 'more'}}</button>
+          <button @click="show_more = !show_more" class="text-xs text-primary float-right mt-5 mr-4">Show {{show_more ? 'less' : 'more'}}</button>
       </div>
       <div>
         <p class="text-xl font-semibold mb-2">Episode List</p>
