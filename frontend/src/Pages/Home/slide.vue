@@ -48,16 +48,12 @@ onMounted(()=>{
                 :centeredSlides="true"
                 :loop="true"
                 :mousewheel="true"
-                :autoplay="{
-                  delay: 5000,
-                  disableOnInteraction: false,
-                }"
                 :navigation="false"
                 :modules="modules"
                 class="mySwiper h-[400px] md:h-[900px] mt-0 md:mt-10">
             <swiper-slide class="relative" v-for="(spotlight,index) in spotlight_list" :key="index">
               <div lass="relative">
-                <img :src="spotlight.banner" class=" !h-[500px] md:!h-[900px] overflow-hidden" :alt="spotlight.title" />
+                <img :src="spotlight.banner" class="!object-inherit md:!object-cover !h-[500px] md:!h-[900px] overflow-hidden" :alt="spotlight.title" />
                     <div class="absolute top-0 left-0 h-full w-full inset-shadow-custom"></div>
                     <div class="absolute top-0 left-0 h-full w-full inset-shadow-custom2"></div>
                     <div class="absolute top-0 left-0 w-full h-full ">
@@ -124,7 +120,6 @@ img {
   border-radius: 8px;
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
 .img-shadow-animation {
   animation-name: img-shadow-animation;
