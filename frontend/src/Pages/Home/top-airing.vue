@@ -7,7 +7,7 @@ import { onMounted, ref } from 'vue';
 const config = {
   itemsToShow: 6,
   gap: 20,
-  autoplay: 3000,
+  // autoplay: 3000,
   pauseAutoplayOnHover: true,
   wrapAround:true,
   breakpointMode: 'carousel',

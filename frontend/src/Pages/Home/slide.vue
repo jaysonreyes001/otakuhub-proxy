@@ -6,9 +6,9 @@ import { onMounted, ref } from 'vue';
 
 const config = {
   itemsToShow: 1,
-  gap: 10,
+  gap: 5,
   autoplay: 5000,
-  pauseAutoplayOnHover: false,
+  pauseAutoplayOnHover: true,
   wrapAround:true,
   mouseDrag:false
 }
