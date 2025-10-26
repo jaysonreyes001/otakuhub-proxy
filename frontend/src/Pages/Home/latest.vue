@@ -40,7 +40,6 @@ const get_data = async () => {
   loading.value = true;
   await axios_instance.get("/recent-episodes")
   .then(function(response){
-    console.log(response.data)
     data_list.value = response.data.results.slice(0,18);
   })
   .catch(function(error){

@@ -129,7 +129,7 @@
       </div>
       <div>
         <p class="text-xl font-semibold mb-2">Episode List</p>
-        <ul v-if="!loading" class="max-w-md divide-y divide-gray-200 dark:divide-slate-800 overflow-y-auto max-h-[700px]">
+        <ul v-if="!loading" class="lg:max-w-md divide-y divide-gray-200 dark:divide-slate-800 overflow-y-auto max-h-[700px]">
           <li @click="change_episode(episode)" 
           :class="episode.number == episode_details.number ? 'bg-slate-100 dark:bg-primary ' : '' " 
           class=" p-2 cursor-pointer transition dark:hover:bg-primary hover:bg-slate-100" v-for="(episode,index) in episode_list">
@@ -201,8 +201,7 @@ const get_anime_info = async () => {
   .then(function(response){
     anime_details.value = response.data;
     episode_list.value = response.data.episodes;
-
-     episode_details.id = episode_details.id == '' ? episode_list.value[0].id : episode_list.value.find(item => item.number == route.params.episode_id)?.id;
+    episode_details.id = episode_details.number == '' ? episode_list.value[0].id : episode_list.value.find(item => item.number == episode_details.number)?.id;
     get_episode_info();
   })
   .catch(function(error){
@@ -212,7 +211,7 @@ const get_anime_info = async () => {
 }
 const get_episode_info = async () => {
     video_loading.value = true;
-    await axios_instance.get("/watch/"+episode_details.id)
+    await axios_instance.get("/watch/"+ episode_details.id)
     .then(response => {
       const data = response.data;
       episode_details.intro = data.intro;
@@ -231,6 +230,7 @@ const get_episode_info = async () => {
 
 
 const change_episode =  (episode) => {
+  console.log("!23");
   episode_details.id = episode.id
   episode_details.number = episode.number;
   router.replace({name:'watch',params:{id:route.params.id,episode_id:''}})

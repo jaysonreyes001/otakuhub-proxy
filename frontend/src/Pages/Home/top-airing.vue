@@ -45,7 +45,6 @@ const get_spotlight = async () => {
   loading.value = true;
   await axios_instance.get("/top-airing")
   .then(function(response){
-    console.log(response.data)
     data_list.value = response.data.results;
   })
   .catch(function(error){
@@ -70,8 +69,8 @@ onMounted(()=>{
     <Carousel  v-bind="config">
       <Slide v-for="(data,index) in data_list" :key="index">
         <router-link :to="{name:'watch',params:{id:data.id}}">
-          <div class="relative w-full h-[500px]">
-            <img :src="data.image" class="rounded h-[250px] lg:h-[300px] w-full overflow-hidden" alt="image" />
+          <div class="relative w-full h-[400px] md:h-[500px]">
+            <img :src="data.image" class="rounded h-[200px] lg:h-[300px] w-full overflow-hidden" alt="image" />
             <div class="absolute mt-2">
                 <p class="text-sm font-semibold">{{ data?.title }}</p>
                 <div class="flex">

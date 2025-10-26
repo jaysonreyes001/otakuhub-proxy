@@ -12,7 +12,6 @@ const load_generes = async() => {
   await axios_instance.get('/genre/list')
   .then(function(response){
     genres.value = response.data;
-    console.log(response,"12")
   })
   .catch(error=>{
     console.log(error)
