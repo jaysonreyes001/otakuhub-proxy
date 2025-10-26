@@ -2,13 +2,13 @@
   <div class="w-full">
 
     <Video v-if="!video_loading" :episode_details="episode_details" />
-    <div class="relative w-full h-[800px]" v-else>
+    <div class="relative w-full h-[400px] md:h-[800px]" v-else>
       <span class="absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] ">
         <span class="animate-spin border-2 border-white border-l-transparent rounded-full w-20 h-20  inline-block  "></span>
       </span>
     </div>
     <div class="flex justify-center">
-    <div class="max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-20 px-2 md:px-10 mt-[50px]">
+    <div class="max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-20 px-2 lg:px-10 mt-[50px]">
       <div>
         <div>
           <p v-if="!loading" class="mt-5 text-lg font-semibold text-primary">{{anime_details.title}}</p>

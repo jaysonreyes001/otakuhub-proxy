@@ -54,7 +54,7 @@ onMounted(()=>{
                 }"
                 :navigation="false"
                 :modules="modules"
-                class="mySwiper h-[400px] md:h-[900px] mt-10">
+                class="mySwiper h-[400px] md:h-[900px] mt-0 md:mt-10">
             <swiper-slide class="relative" v-for="(spotlight,index) in spotlight_list" :key="index">
               <div lass="relative">
                 <img :src="spotlight.banner" class=" !h-[500px] md:!h-[900px] overflow-hidden" alt="image" />

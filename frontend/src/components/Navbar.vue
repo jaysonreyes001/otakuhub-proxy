@@ -90,8 +90,8 @@ const isOpen = ref<boolean>(false);
       href="/"
       class="font-bold text-lg flex items-center"
     >
-      <img class="w-[120px] h-[60px] rounded-lg"  v-if="mode == 'dark'" src='@/assets/images/logo-dark.png' />
-      <img class="w-[120px] h-[60px] rounded-lg" v-else src='@/assets/images/logo-light.png' />
+      <img class="w-[80px] h-[40px] rounded-lg"  v-if="mode == 'dark'" src='@/assets/images/logo-dark.png' />
+      <img class="w-[80px] h-[40px] rounded-lg" v-else src='@/assets/images/logo-light.png' />
       </a
     >
     <!-- Mobile -->
