@@ -55,11 +55,11 @@ onMounted(()=>{
 
 <template>
   <div>
-    <div class="relative group" v-if="!loading">
+    <div class="relative group mt-10" v-if="!loading">
       <div class="flex items-center justify-between mb-4">
         <div class="flex items-center gap-x-2">
           <span class="inline-block h-[30px] mt-1 w-[5px] bg-primary "></span>
-           <h1 class="text-xl font-bold"> LATEST EPISODE</h1>
+           <h1 class="text-lg font-bold"> LATEST EPISODE</h1>
         </div>
         <button class="text-xs font-bold">VIEW MORE</button>
       </div>

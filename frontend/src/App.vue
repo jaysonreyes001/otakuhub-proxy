@@ -5,7 +5,7 @@ import Footer from "./components/Footer.vue";
 
 <template>
   <Navbar />
-  <div class="grid place-items-center lg:max-w-screen-2xl gap-8 mx-auto px-5 lg:px-5 py-10">
+  <div class=" lg:max-w-screen-2xl mx-auto px-5 lg:px-5 py-10">
     <RouterView/>
   </div>
   <Footer />

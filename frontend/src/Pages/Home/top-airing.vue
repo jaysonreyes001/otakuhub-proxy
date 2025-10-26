@@ -1,43 +1,15 @@
 <script setup>
-import 'vue3-carousel/carousel.css'
-import { Carousel, Slide, Navigation } from 'vue3-carousel'
+// Import Swiper Vue.js components
+import { Swiper, SwiperSlide } from 'swiper/vue';
+
+  // import required modules
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+
+// Import Swiper styles
+import 'swiper/css';
+
 import axios_instance from '@/plugin/axios.js';
 import { onMounted, ref } from 'vue';
-
-const config = {
-  itemsToShow: 6,
-  gap: 20,
-  // autoplay: 3000,
-  pauseAutoplayOnHover: true,
-  wrapAround:true,
-  breakpointMode: 'carousel',
-  breakpoints:{
-    0:{
-      itemsToShow:2,
-      gap:10,
-    },
-    300:{
-      itemsToShow:3,
-      gap:10,
-    },
-    500:{
-      itemsToShow:4,
-      gap:10,
-    },
-    700:{
-      itemsToShow:5,
-      gap:15,
-    },
-    800:{
-      itemsToShow:5,
-      gap:15,
-    },
-    1200:{
-      itemsToShow:7,
-      gap:20,
-    },
-  }
-} 
 
 const data_list = ref([]);
 const loading = ref(false);
@@ -61,33 +33,56 @@ onMounted(()=>{
 <template>
   <div>
     
-    <div class="relative group" v-if="!loading">
+    <div class="relative group mt-10" v-if="!loading">
       <div class="flex items-center gap-x-2 mb-4">
         <span class="inline-block h-[30px] mt-1 w-[5px] bg-primary "></span>
-          <h1 class="text-xl font-bold">TOP AIRING</h1>
+          <h1 class="text-lg font-bold">TOP AIRING</h1>
       </div>
-    <Carousel  v-bind="config">
-      <Slide v-for="(data,index) in data_list" :key="index">
-        <router-link :to="{name:'watch',params:{id:data.id}}">
-          <div class="relative w-full h-[400px] md:h-[500px]">
-            <img :src="data.image" class="rounded h-[200px] lg:h-[300px] w-full overflow-hidden" alt="image" />
-            <div class="absolute mt-2">
-                <p class="text-sm font-semibold">{{ data?.title }}</p>
-                <div class="flex">
-                <p class="text-gray-400 text-xs mt-1">{{ data.sub > 1 ? 'Sub' : '' }} 
-                  {{ data.sub > 1 && data.dub > 1 ? '|' :'' }} 
-                  {{ data.dub > 1 ? 'Dub' : '' }}  
-                  {{ data.duration ? ' | '+data.duration : '' }}
-                </p>
-                </div>
-            </div>
-          </div>
-        </router-link>
-      </Slide>
-      <!-- <template #addons>
-        <Navigation />
-      </template> -->
-    </Carousel>
+      <swiper
+            :style="{
+                '--swiper-navigation-color': '#fff',
+                '--swiper-pagination-color': '#fff',
+            }"
+
+            :modules="modules"
+            class="mySwiper relative"
+            :breakpoints="{
+                '0': {
+                    slidesPerView: 3,
+                    spaceBetween:10
+                },
+                '568': {
+                    slidesPerView: 4,
+                    spaceBetween:10
+                },
+                '1024': {
+                    slidesPerView: 5,
+                    spaceBetween:15
+                },
+                '1280': {
+                    slidesPerView: 7,
+                    spaceBetween:15
+                },
+            }"
+        >
+            <swiper-slide v-for="(data,index) in data_list" :key="index">
+                <router-link :to="{name:'watch',params:{id:data.id}}">
+                  <div class="relative">
+                    <img :src="data.image" class="rounded h-[200px] sm:h-[300px] lg:h-[300px] w-full overflow-hidden" alt="image" />
+                    <div class="mt-2">
+                        <p class="text-sm font-semibold">{{ data?.title }}</p>
+                        <div class="flex">
+                        <p class="text-gray-400 text-xs mt-1">{{ data.sub > 1 ? 'Sub' : '' }} 
+                          {{ data.sub > 1 && data.dub > 1 ? '|' :'' }} 
+                          {{ data.dub > 1 ? 'Dub' : '' }}  
+                          {{ data.duration ? ' | '+data.duration : '' }}
+                        </p>
+                        </div>
+                    </div>
+                  </div>
+                  </router-link>
+                </swiper-slide>
+            </swiper>
     </div>
     <div class="relative h-[250px]" v-else>
         <span class="absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] ">
