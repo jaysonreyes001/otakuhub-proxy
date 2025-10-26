@@ -80,10 +80,10 @@
               <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 "></div>
               <span class="sr-only">Loading...</span>
           </div>
-          <p v-else class="mt-3 text-sm text-gray-400 ">{{anime_details.description}}</p>
+          <p v-else class="mt-3 text-sm text-gray-400 " :class="!show_more ? 'line-clamp-3' : '' ">{{anime_details.description}}</p>
         </div>
 
-        <div v-if="!loading" class="mt-10 space-y-5">
+        <div v-if="!loading && show_more" class="mt-10 space-y-5 mb-5">
           <div class="grid grid-cols-2 gap-5">
               <div>
                 <p class="text-xs md:text-sm font-medium text-gray-900  dark:text-white">
@@ -118,48 +118,8 @@
                 </p>
               </div>
           </div>
-            <!-- <ul class=" divide-y divide-gray-200 dark:divide-gray-700">
-              <li class="pb-3 sm:pb-4">
-                  <div class="flex items-center space-x-4 rtl:space-x-reverse">
-                    <div class="flex-1 min-w-0">
-                        <p class="text-xs md:text-sm font-medium text-gray-900  dark:text-white">
-                            Japanse Title
-                        </p>
-                    </div>
-                    <div class="inline-flex justify-end text-xs md:text-sm items-center text-xs w-[300px] font-semibold text-gray-900 dark:text-white">
-                        
-                    </div>
-                  </div>
-              </li>
-              <li class="pb-3 sm:pb-4">
-                  <div class="flex items-center space-x-4 rtl:space-x-reverse">
-                    <div class="flex-1 min-w-0">
-                        <p class="text-xs md:text-sm font-medium text-gray-900  dark:text-white">
-                            Total Episodes
-                        </p>
-                    </div>
-                    <div class="inline-flex text-xs md:text-sm items-center font-semibold text-gray-900 dark:text-white">
-                        {{anime_details.totalEpisodes}} Episode/s
-                    </div>
-                  </div>
-              </li>
-
-              <li  v-if="anime_details.genres" class="pb-3 sm:pb-4 ">
-                  <div class="flex items-center space-x-4 rtl:space-x-reverse">
-                    <div class="flex-1 min-w-0">
-                        <p class=" mt-3  text-xs md:text-sm font-medium text-gray-900  dark:text-white">
-                            Genre
-                        </p>
-                    </div>
-                    <div class="inline-flex text-xs md:text-sm justify-end items-center w-[300px] font-semibold text-gray-900 dark:text-white">
-                        {{anime_details.genres.join(" • ")}}
-                    </div>
-                  </div>
-              </li>
-
-            </ul> -->
-
         </div>
+          <button @click="show_more = !show_more" class="text-xs">Show {{show_more ? 'less' : 'more'}}</button>
       </div>
       <div>
         <p class="text-xl font-semibold mb-2">Episode List</p>
@@ -217,6 +177,7 @@ const router = useRouter();
 const anime_details = ref({});
 const episode_list = ref([]);
 const single_episode = ref({});
+const show_more = ref(false);
 const episode_details = reactive({
   id:'',
   number: !route.params.episode_id  ? 1 : route.params.episode_id,
@@ -262,9 +223,7 @@ const get_episode_info = async () => {
     
 }
 
-
 const change_episode =  (episode) => {
-  console.log("!23");
   episode_details.id = episode.id
   episode_details.number = episode.number;
   router.replace({name:'watch',params:{id:route.params.id,episode_id:''}})
