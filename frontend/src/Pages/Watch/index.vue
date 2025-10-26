@@ -88,11 +88,11 @@
               <li class="pb-3 sm:pb-4">
                   <div class="flex items-center space-x-4 rtl:space-x-reverse">
                     <div class="flex-1 min-w-0">
-                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                        <p class="text-xs md:text-sm font-medium text-gray-900  dark:text-white">
                             Japanse Title
                         </p>
                     </div>
-                    <div class="inline-flex justify-end items-center text-xs w-[300px] font-semibold text-gray-900 dark:text-white">
+                    <div class="inline-flex justify-end text-xs md:text-sm items-center text-xs w-[300px] font-semibold text-gray-900 dark:text-white">
                         {{anime_details.japaneseTitle}}
                     </div>
                   </div>
@@ -100,24 +100,24 @@
               <li class="pb-3 sm:pb-4">
                   <div class="flex items-center space-x-4 rtl:space-x-reverse">
                     <div class="flex-1 min-w-0">
-                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                        <p class="text-xs md:text-sm font-medium text-gray-900  dark:text-white">
                             Total Episodes
                         </p>
                     </div>
-                    <div class="inline-flex items-center font-semibold text-gray-900 dark:text-white">
+                    <div class="inline-flex text-xs md:text-sm items-center font-semibold text-gray-900 dark:text-white">
                         {{anime_details.totalEpisodes}} Episode/s
                     </div>
                   </div>
               </li>
 
-              <li  v-if="anime_details.genres" class="pb-3 sm:pb-4">
+              <li  v-if="anime_details.genres" class="pb-3 sm:pb-4 ">
                   <div class="flex items-center space-x-4 rtl:space-x-reverse">
                     <div class="flex-1 min-w-0">
-                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                        <p class=" mt-3  text-xs md:text-sm font-medium text-gray-900  dark:text-white">
                             Genre
                         </p>
                     </div>
-                    <div class="inline-flex text-sm justify-end items-center w-[300px] font-semibold text-gray-900 dark:text-white">
+                    <div class="inline-flex text-xs md:text-sm justify-end items-center w-[300px] font-semibold text-gray-900 dark:text-white">
                         {{anime_details.genres.join(" • ")}}
                     </div>
                   </div>
@@ -135,7 +135,7 @@
           class=" p-2 cursor-pointer transition dark:hover:bg-primary hover:bg-slate-100" v-for="(episode,index) in episode_list">
             <div class="flex  space-x-4 rtl:space-x-reverse">
                 <div class="shrink-0">
-                    <img class="w-[180px] h-[80px] object-cover" :src="anime_details.image"  alt="Neil image">
+                    <img class=" w-[60px] md:w-[180px] h-[50px] md:h-[80px] object-cover" :src="anime_details.image"  alt="Neil image">
                 </div>
                 <div class="flex-1 min-w-0 mt-2">
                     <p :class="episode.number == episode_details.number ? 'text-black' : 'dark:text-white  text-gray-900'" class="text-base font-medium line-clamp-2">
