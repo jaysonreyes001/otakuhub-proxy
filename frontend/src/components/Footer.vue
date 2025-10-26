@@ -1,161 +1,73 @@
-<script setup lang="ts">
-import { ChevronsDown } from "lucide-vue-next";
+<script setup>
+import { onMounted, ref } from "vue";
 import Separator from "./ui/separator/Separator.vue";
+import { useColorMode } from "@vueuse/core";
+import axios_instance from '@/plugin/axios.js';
+const mode = useColorMode();
+
+
+const genres = ref([]);
+
+const load_generes = async() => {
+  await axios_instance.get('/genre/list')
+  .then(function(response){
+    genres.value = response.data;
+    console.log(response,"12")
+  })
+  .catch(error=>{
+    console.log(error)
+  })
+}
+
+onMounted(()=>{
+  load_generes();
+})
+
 </script>
 
 <template>
   <footer
     id="footer"
-    class="container lg:max-w-screen-2xl !px-[0px] py-24 pb-16 sm:py-32 sm:pb-24"
+    class="container lg:max-w-screen-2xl !px-[0px] py-20 pb-16 sm:py-32 sm:pb-24"
   >
     <div class="p-10 bg-muted/50 dark:bg-card border rounded-2xl">
       <div
-        class="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-x-12 gap-y-8"
+        class="grid grid-cols-1 lg:grid-cols-3"
       >
-        <div class="col-span-full xl:col-span-2">
+        <div class="hidden lg:block">
           <a
             href="#"
             class="flex font-bold items-center"
           >
-            <ChevronsDown
-              class="bg-gradient-to-tr from-primary via-primary/70 to-primary rounded-lg w-9 h-9 mr-2 border text-white"
-            />
-
-            <h3 class="text-2xl">Shadcn-Vue</h3>
+            <img class="w-[180px] h-[100px] rounded-lg"  v-if="mode == 'dark'" src='@/assets/images/logo-dark.png' />
+          <img class="w-[180px] h-[100px] rounded-lg" v-else src='@/assets/images/logo-light.png' />
           </a>
         </div>
-
-        <div class="flex flex-col gap-2">
-          <h3 class="font-bold text-lg">Contact</h3>
-          <div>
-            <a
-              href="#"
-              class="opacity-60 hover:opacity-100"
-            >
-              Github
-            </a>
-          </div>
-
-          <div>
-            <a
-              href="#"
-              class="opacity-60 hover:opacity-100"
-            >
-              Twitter
-            </a>
-          </div>
-
-          <div>
-            <a
-              href="#"
-              class="opacity-60 hover:opacity-100"
-            >
-              Instagram
-            </a>
-          </div>
-        </div>
-
-        <div class="flex flex-col gap-2">
-          <h3 class="font-bold text-lg">Platforms</h3>
-          <div>
-            <a
-              href="#"
-              class="opacity-60 hover:opacity-100"
-            >
-              iOS
-            </a>
-          </div>
-
-          <div>
-            <a
-              href="#"
-              class="opacity-60 hover:opacity-100"
-            >
-              Android
-            </a>
-          </div>
-
-          <div>
-            <a
-              href="#"
-              class="opacity-60 hover:opacity-100"
-            >
-              Web
-            </a>
-          </div>
-        </div>
-
-        <div class="flex flex-col gap-2">
-          <h3 class="font-bold text-lg">Help</h3>
-          <div>
-            <a
-              href="#"
-              class="opacity-60 hover:opacity-100"
-            >
-              Contact Us
-            </a>
-          </div>
-
-          <div>
-            <a
-              href="#"
-              class="opacity-60 hover:opacity-100"
-            >
-              FAQ
-            </a>
-          </div>
-
-          <div>
-            <a
-              href="#"
-              class="opacity-60 hover:opacity-100"
-            >
-              Feedback
-            </a>
-          </div>
-        </div>
-
-        <div class="flex flex-col gap-2">
-          <h3 class="font-bold text-lg">Socials</h3>
-          <div>
-            <a
-              href="#"
-              class="opacity-60 hover:opacity-100"
-            >
-              Twitch
-            </a>
-          </div>
-
-          <div>
-            <a
-              href="#"
-              class="opacity-60 hover:opacity-100"
-            >
-              Discord
-            </a>
-          </div>
-
-          <div>
-            <a
-              href="#"
-              class="opacity-60 hover:opacity-100"
-            >
-              Dribbble
-            </a>
+        <div class="cols-span-1 lg:col-span-2 lg:mt-0 mt-10">
+          <h3 class="font-bold text-lg mb-5">Genres</h3>
+          <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-5">
+            <div v-for="(genre,index) in genres" :key="index">
+              <router-link
+                to="#"
+                class="opacity-60 hover:text-primary capitalize"
+              >
+                {{ genre }}
+              </router-link>
+            </div>
           </div>
         </div>
       </div>
 
       <Separator class="my-6" />
-      <section className="">
+      <section class="text-center">
         <h3 class="">
-          &copy; 2024 Designed and developed by
+          &copy; 2025
           <a
             target="_blank"
-            href="https://github.com/leoMirandaa"
+            href="#"
             className="text-primary transition-all border-primary hover:border-b-2"
           >
-            Leo Miranda
+            otakuhub
           </a>
         </h3>
       </section>

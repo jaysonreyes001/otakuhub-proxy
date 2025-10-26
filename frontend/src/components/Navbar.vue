@@ -25,7 +25,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
-// import { ChevronsDown, Menu } from "lucide-vue-next";
+import {  Menu } from "lucide-vue-next";
 // import GithubIcon from "@/icons/GithubIcon.vue";
 import ToggleTheme from "./ToggleTheme.vue";
 
@@ -41,7 +41,7 @@ interface FeatureProps {
 
 const routeList: RouteProps[] = [
   {
-    href: "#testimonials",
+    href: "/",
     label: "Home",
   },
   // {
@@ -90,7 +90,8 @@ const isOpen = ref<boolean>(false);
       href="/"
       class="font-bold text-lg flex items-center"
     >
-      <img class="w-[100px]" src="@/assets/images/logo.png"/>
+      <img class="w-[120px] h-[60px] rounded-lg"  v-if="mode == 'dark'" src='@/assets/images/logo-dark.png' />
+      <img class="w-[120px] h-[60px] rounded-lg" v-else src='@/assets/images/logo-light.png' />
       </a
     >
     <!-- Mobile -->
@@ -114,7 +115,8 @@ const isOpen = ref<boolean>(false);
                   href="/"
                   class="flex items-center"
                 >
-                  <img class="w-[100px]" src="@/assets/images/logo.png"/>
+                  <img class="w-[120px] h-[60px] rounded-lg"  v-if="mode == 'dark'" src='@/assets/images/logo-dark.png' />
+      <img class="w-[120px] h-[60px] rounded-lg" v-else src='@/assets/images/logo-light.png' />
                 </a>
               </SheetTitle>
             </SheetHeader>

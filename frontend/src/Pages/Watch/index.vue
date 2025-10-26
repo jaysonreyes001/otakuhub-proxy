@@ -8,32 +8,83 @@
       </span>
     </div>
     <div class="flex justify-center">
-    <div class="max-w-7xl grid grid-cols-2 gap-20 px-10 mt-[50px]">
+    <div class="max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-20 px-10 mt-[50px]">
       <div>
-        <p class="mt-5 text-lg font-semibold text-primary">{{anime_details.title}}</p>
-        <p v-if="single_episode" class="mt-4 text-3xl font-semibold">EP{{single_episode?.number}} - {{single_episode?.title}}</p>
+        <div>
+          <p v-if="!loading" class="mt-5 text-lg font-semibold text-primary">{{anime_details.title}}</p>
+          <div v-else role="status" class="max-w-sm animate-pulse">
+              <div class="h-5 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[300px] mb-2.5 mt-5"></div>
+              <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+
+          <div>
+            <p v-if="single_episode && !video_loading" class="mt-4 text-3xl font-semibold">EP{{single_episode?.number}} - {{single_episode?.title}}</p>
+            <div v-else role="status" class="max-w-sm animate-pulse">
+              <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[300px] mb-2.5 mt-5"></div>
+              <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[360px]"></div>
+              <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+        
         <div class="mt-4 flex gap-x-2">
-          <div class="flex items-center text-gray-400 ">
+          <div v-if="loading" role="status" class="max-w-sm animate-pulse">
+              <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-[50px] mt-2 mb-4"></div>
+              <span class="sr-only">Loading...</span>
+          </div>
+          <div v-else class="flex items-center text-gray-400 ">
             <Icon icon="mdi:play" class="text-xl"/>
             {{ anime_details.type }}
           </div>
+
           <span class="text-gray-400">•</span>
-          <div class="flex items-center text-gray-400 ">
+
+          <div v-if="loading" role="status" class="max-w-sm animate-pulse">
+              <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-[50px] mt-2 mb-4"></div>
+              <span class="sr-only">Loading...</span>
+          </div>
+
+          <div v-else class="flex items-center text-gray-400 ">
             {{ anime_details.subOrDub }}
           </div>
+
           <span class="text-gray-400">•</span>
-          <div class="flex items-center text-gray-400 ">
+
+          <div v-if="loading" role="status" class="max-w-sm animate-pulse">
+              <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-[50px] mt-2 mb-4"></div>
+              <span class="sr-only">Loading...</span>
+          </div>
+          <div v-else class="flex items-center text-gray-400 ">
             {{ anime_details.status }}
           </div>
+
+
           <span class="text-gray-400">•</span>
-          <div class="flex items-center text-gray-400 ">
+
+          <div v-if="loading" role="status" class="max-w-sm animate-pulse">
+              <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-[50px] mt-2 mb-4"></div>
+              <span class="sr-only">Loading...</span>
+          </div>
+          <div v-else class="flex items-center text-gray-400 ">
             {{ anime_details.season }}
           </div>
         </div>
-        <p class="mt-3 text-sm text-gray-400 ">{{anime_details.description}}</p>
-        <div class="mt-10">
-          
-            <ul class="max-w-md divide-y divide-gray-200 dark:divide-gray-700">
+
+        <div>
+          <div v-if="loading" role="status" class="w-full  animate-pulse">
+              <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-full mb-4"></div>
+              <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
+              <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
+              <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700  mb-2.5"></div>
+              <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700  mb-2.5"></div>
+              <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 "></div>
+              <span class="sr-only">Loading...</span>
+          </div>
+          <p v-else class="mt-3 text-sm text-gray-400 ">{{anime_details.description}}</p>
+        </div>
+
+        <div v-if="!loading" class="mt-10">
+            <ul class=" divide-y divide-gray-200 dark:divide-gray-700">
               <li class="pb-3 sm:pb-4">
                   <div class="flex items-center space-x-4 rtl:space-x-reverse">
                     <div class="flex-1 min-w-0">
@@ -41,7 +92,7 @@
                             Japanse Title
                         </p>
                     </div>
-                    <div class="inline-flex items-center text-xs w-[300px] font-semibold text-gray-900 dark:text-white">
+                    <div class="inline-flex justify-end items-center text-xs w-[300px] font-semibold text-gray-900 dark:text-white">
                         {{anime_details.japaneseTitle}}
                     </div>
                   </div>
@@ -53,7 +104,7 @@
                             Total Episodes
                         </p>
                     </div>
-                    <div class="inline-flex items-center text-[] font-semibold text-gray-900 dark:text-white">
+                    <div class="inline-flex items-center font-semibold text-gray-900 dark:text-white">
                         {{anime_details.totalEpisodes}} Episode/s
                     </div>
                   </div>
@@ -66,7 +117,7 @@
                             Genre
                         </p>
                     </div>
-                    <div class="inline-flex items-center text-[] font-semibold text-gray-900 dark:text-white">
+                    <div class="inline-flex text-sm justify-end items-center w-[300px] font-semibold text-gray-900 dark:text-white">
                         {{anime_details.genres.join(" • ")}}
                     </div>
                   </div>
@@ -78,14 +129,16 @@
       </div>
       <div>
         <p class="text-xl font-semibold mb-2">Episode List</p>
-        <ul class="max-w-md divide-y divide-gray-200 dark:divide-slate-800">
-          <li @click="change_episode(episode)" :class="episode.number == episode_details.number ? 'bg-slate-100 dark:bg-primary ' : '' " class=" p-2 cursor-pointer transition dark:hover:bg-primary hover:bg-slate-100 " v-for="(episode,index) in episode_list">
+        <ul v-if="!loading" class="max-w-md divide-y divide-gray-200 dark:divide-slate-800 overflow-y-auto max-h-[700px]">
+          <li @click="change_episode(episode)" 
+          :class="episode.number == episode_details.number ? 'bg-slate-100 dark:bg-primary ' : '' " 
+          class=" p-2 cursor-pointer transition dark:hover:bg-primary hover:bg-slate-100" v-for="(episode,index) in episode_list">
             <div class="flex  space-x-4 rtl:space-x-reverse">
                 <div class="shrink-0">
                     <img class="w-[180px] h-[80px] object-cover" :src="anime_details.image"  alt="Neil image">
                 </div>
                 <div class="flex-1 min-w-0 mt-2">
-                    <p :class="episode.number == episode_details.number ? 'text-black' : 'dark:text-white  text-gray-900'" class="text-lg font-medium  truncate">
+                    <p :class="episode.number == episode_details.number ? 'text-black' : 'dark:text-white  text-gray-900'" class="text-base font-medium line-clamp-2">
                       EP{{episode.number}} - {{episode.title}}
                     </p>
                     <p :class="episode.number == episode_details.number ? ' text-gray-500 dark:text-gray-200' : 'dark:text-gray-400  text-gray-500'" class="text-sm truncate">
@@ -95,6 +148,22 @@
               </div>
           </li>
         </ul>
+
+        <div class="space-y-5" v-else>
+            <div v-for="index in 3" role="status" class="space-y-8 animate-pulse md:space-y-0 md:space-x-8 rtl:space-x-reverse md:flex md:items-center">
+              <div class="flex items-center justify-center w-full h-28 bg-gray-300 rounded-sm sm:w-96 dark:bg-gray-700">
+                  <svg class="w-10 h-10 text-gray-200 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
+                      <path d="M18 0H2a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-5.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm4.376 10.481A1 1 0 0 1 16 15H4a1 1 0 0 1-.895-1.447l3.5-7A1 1 0 0 1 7.468 6a.965.965 0 0 1 .9.5l2.775 4.757 1.546-1.887a1 1 0 0 1 1.618.1l2.541 4a1 1 0 0 1 .028 1.011Z"/>
+                  </svg>
+              </div>
+              <div class="w-full">
+                  <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4"></div>
+                  <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5"></div>
+              </div>
+              <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -106,15 +175,17 @@ import Video from "@/Pages/Watch/video.vue";
 
 import axios_instance from "@/plugin/axios.js";
 import { computed, onMounted, reactive, ref } from "vue";
-import { useRoute } from 'vue-router';
-const video_loading = ref(false);
+import { useRoute,useRouter } from 'vue-router';
+const video_loading = ref(true);
+const loading = ref(false);
 const route = useRoute();
+const router = useRouter();
 const anime_details = ref({});
 const episode_list = ref([]);
 const single_episode = ref({});
 const episode_details = reactive({
-  id:route.params.episode_id != '' ? route.params.episode_id  : '' ,
-  number:1,
+  id:'',
+  number: !route.params.episode_id  ? 1 : route.params.episode_id,
   intro:{},
   outro:{},
   source:[],
@@ -122,6 +193,7 @@ const episode_details = reactive({
 });
 
 const get_anime_info = async () => {
+  loading.value = true;
   const anime_id = route.params.id;
   await axios_instance.get("/info",{params:{
     id:anime_id
@@ -129,14 +201,15 @@ const get_anime_info = async () => {
   .then(function(response){
     anime_details.value = response.data;
     episode_list.value = response.data.episodes;
+
+     episode_details.id = episode_details.id == '' ? episode_list.value[0].id : episode_list.value.find(item => item.number == route.params.episode_id)?.id;
     get_episode_info();
   })
   .catch(function(error){
     console.log(error)
   })
+  loading.value = false;
 }
-
-
 const get_episode_info = async () => {
     video_loading.value = true;
     await axios_instance.get("/watch/"+episode_details.id)
@@ -160,6 +233,7 @@ const get_episode_info = async () => {
 const change_episode =  (episode) => {
   episode_details.id = episode.id
   episode_details.number = episode.number;
+  router.replace({name:'watch',params:{id:route.params.id,episode_id:''}})
   get_episode_info();
 }
 

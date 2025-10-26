@@ -24,6 +24,13 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
+  scrollBehavior(_to,_from, savedPosition) {
+      if (savedPosition) {
+        return savedPosition; // Maintain scroll position when using back/forward buttons
+      } else {
+        return { top: 0, left: 0 }; // Scroll to top for new route navigations
+      }
+    }
 });
 router.beforeEach((to,_from,next)=>{
     let title:string;

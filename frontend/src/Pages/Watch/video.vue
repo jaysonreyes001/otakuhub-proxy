@@ -1,6 +1,6 @@
 <template lang="">
   <div class="w-full">
-     <video ref="video" class="w-full h-[800px]" controls autoplay></video>
+     <video ref="video" class="w-full h-[400px] lg:h-[800px]" controls autoplay></video>
   </div>
 </template>
 <script setup>
@@ -11,7 +11,7 @@ import { onBeforeMount, onMounted, ref, watch } from 'vue';
 const props = defineProps({
   episode_details:Object
 });
-const hls = ref();
+const hls = ref(null);
 const video = ref(null);
 const source = ref("");
 const subtitle = ref("");
@@ -96,7 +96,9 @@ function clearVideo(){
   video.value.pause();
   video.value.src = "";
   video.currentTime = 0;
-
+  if(hls.value){
+     hls.value.destroyed();
+  }
 }
 onMounted(()=>{
   clearVideo();
