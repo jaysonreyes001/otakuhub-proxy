@@ -83,8 +83,42 @@
           <p v-else class="mt-3 text-sm text-gray-400 ">{{anime_details.description}}</p>
         </div>
 
-        <div v-if="!loading" class="mt-10">
-            <ul class=" divide-y divide-gray-200 dark:divide-gray-700">
+        <div v-if="!loading" class="mt-10 space-y-5">
+          <div class="grid grid-cols-2 gap-5">
+              <div>
+                <p class="text-xs md:text-sm font-medium text-gray-900  dark:text-white">
+                    Japanse Title
+                </p>
+              </div>
+              <div>
+                <p class="text-right font-semibold text-gray-900 dark:text-white text-xs md:text-sm">{{anime_details.japaneseTitle}}</p>
+              </div>
+          </div>
+          <hr/>
+          <div class="grid grid-cols-2 gap-5">
+              <div>
+                <p class="text-xs md:text-sm font-medium text-gray-900  dark:text-white">
+                    Total Episodes
+                </p>
+              </div>
+              <div>
+                <p class="text-right font-semibold text-gray-900 dark:text-white text-xs md:text-sm">{{anime_details.totalEpisodes}} Episode/s</p>
+              </div>
+          </div>
+          <hr class="bg-slate-200 !h-[1px]"/>
+          <div class="grid grid-cols-2 gap-5" v-if="anime_details.genres">
+              <div>
+                <p class="text-xs md:text-sm font-medium text-gray-900  dark:text-white">
+                    Genres
+                </p>
+              </div>
+              <div>
+                <p class="text-right font-semibold text-gray-900 dark:text-white text-xs md:text-sm">
+                  {{anime_details.genres.join(" • ")}}
+                </p>
+              </div>
+          </div>
+            <!-- <ul class=" divide-y divide-gray-200 dark:divide-gray-700">
               <li class="pb-3 sm:pb-4">
                   <div class="flex items-center space-x-4 rtl:space-x-reverse">
                     <div class="flex-1 min-w-0">
@@ -93,7 +127,7 @@
                         </p>
                     </div>
                     <div class="inline-flex justify-end text-xs md:text-sm items-center text-xs w-[300px] font-semibold text-gray-900 dark:text-white">
-                        {{anime_details.japaneseTitle}}
+                        
                     </div>
                   </div>
               </li>
@@ -123,7 +157,7 @@
                   </div>
               </li>
 
-            </ul>
+            </ul> -->
 
         </div>
       </div>
