@@ -57,11 +57,11 @@ onMounted(()=>{
                 class="mySwiper h-[400px] md:h-[900px] mt-10">
         <swiper-slide class="relative" v-for="(spotlight,index) in spotlight_list" :key="index">
           <div lass="relative">
-            <img :src="spotlight.banner" class=" !h-[500px] lg:!h-[900px] overflow-hidden" alt="image" />
+            <img :src="spotlight.banner" class=" !h-[500px] md:!h-[900px] overflow-hidden" alt="image" />
                 <div class="absolute top-0 left-0 h-full w-full inset-shadow-custom"></div>
                 <div class="absolute top-0 left-0 h-full w-full inset-shadow-custom2"></div>
                 <div class="absolute top-0 left-0 w-full h-full ">
-                  <div class="flex items-center h-full  w-[400px] lg:w-[600px]">
+                  <div class="flex items-center h-full  w-[250px] md:w-[600px]">
                     <div class="ml-10 space-y-5">
                       <p class="text-primary font-semibold text-md lg:text-xl ">#{{ index +1 }} Spotlight</p>
                       <h1 class="text-xl lg:text-4xl dark:text-white text-primary font-bold">{{ spotlight.title }}</h1>
