@@ -8,7 +8,7 @@
       </span>
     </div>
     <div class="flex justify-center">
-    <div class="max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-20 px-10 mt-[50px]">
+    <div class="max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-20 px-2 md:px-10 mt-[50px]">
       <div>
         <div>
           <p v-if="!loading" class="mt-5 text-lg font-semibold text-primary">{{anime_details.title}}</p>
