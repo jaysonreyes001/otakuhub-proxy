@@ -32,11 +32,6 @@ const swiper_config = {
     spaceBetween:10,
     slidesPerView:1,
     centeredSlides:true,
-    loop:true,
-    autoplay:{
-        delay: 3000,
-        disableOnInteraction: false,
-      },
     mousewheel:true,
     navigation:false,
     modules:modules,
