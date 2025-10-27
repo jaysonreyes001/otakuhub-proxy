@@ -114,7 +114,7 @@ onMounted(()=>{
                 </div>
           </swiper-slide>
         </swiper>
-        <div  class="custom-nav hidden lg:block">
+        <div  class="custom-nav">
             <button :class="{
                 'custom-prev-light': mode === 'light',
                 'custom-prev': mode === 'dark',
