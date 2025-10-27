@@ -73,7 +73,7 @@ onMounted(()=>{
                   <div class="image-container rounded w-full relative overflow-hidden block bg-secondary pb-[150%]">
                     <img :src="data.image" class="absolute z-2 top-0 left-0 right-0 bottom-0 h-full w-full object-cover"  :alt="data.title" />
                 </div>
-                <p class="break-words text-sm mt-2">{{ data.title }}</p>
+                <p class="break-words text-xs md:text-sm font-semibold mt-2">{{ data.title }}</p>
                 <div class="flex justify-between ">
                   <p class="text-gray-400 text-xs mt-1">Episode {{ data.sub }}</p>
                   <p class="text-gray-400 text-xs mt-1 ">{{ data.sub > 1 ? 'Sub' : '' }} 
