@@ -49,8 +49,7 @@ app.get("/proxy", async (req, res) => {
         .join('\n');
 
       res.setHeader("Content-Type", "application/vnd.apple.mpegurl");
-      res.send(rewritten);
-      return;
+      response.body.pipe(res);
     }
     // Handle binary responses (like .ts, .mp4, .key, etc.)
     const contentType = response.headers.get("content-type");
