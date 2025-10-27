@@ -135,7 +135,6 @@ let list_details = reactive({});
 
 const get_list = async () => {
      loading.value = true;
-     list_details = {};
      await axios_instance.get(`/${route.params.type}?page=${current_page.value}`)
      .then(function(response){
           list_details = response.data;
