@@ -33,8 +33,7 @@ app.get("/proxy", async (req, res) => {
         "Origin": new URL(refererUrl).origin,
         "Accept": "*/*",
         "Accept-Language": "en-US,en;q=0.9",
-        "Connection": "keep-alive",
-        "Cache-Control", "s-maxage=86400, stale-while-revalidate=59",
+        "Connection": "keep-alive"
       },
     });
 
