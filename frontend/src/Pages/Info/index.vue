@@ -145,6 +145,10 @@
                     spaceBetween:10
                 },
                 '568': {
+                    slidesPerView: 3,
+                    spaceBetween:10
+                },
+                '768': {
                     slidesPerView: 4,
                     spaceBetween:10
                 },
@@ -153,7 +157,7 @@
                     spaceBetween:15
                 },
                 '1280': {
-                    slidesPerView: 7,
+                    slidesPerView: 6,
                     spaceBetween:15
                 },
             }"
@@ -164,7 +168,7 @@
                     <div class="absolute z-10 transition  bg-opacity-0 group-hover:bg-muted/80 w-full h-full  bg-gray-100 dark:bg-transparent ">
                       <Icon icon="mdi:play-outline" class="hidden text-primary group-hover:block text-5xl  absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] "/>
                     </div>
-                    <img :src="data.image" :alt="data.title" class="h-[280px] sm:h-[300px] lg:h-[350px] w-full overflow-hidden" />
+                    <img :src="data.image" :alt="data.title" class="h-[280px] sm:h-[290px] lg:h-[350px] w-full overflow-hidden" />
                     <div class="mt-2">
                         <p class="text-sm font-semibold">{{ data?.title }}</p>
                         <div class="flex">
