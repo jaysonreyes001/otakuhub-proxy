@@ -29,7 +29,7 @@ const get_spotlight = async () => {
 }
 
 const swiper_config = {
-    spaceBetween:30,
+    spaceBetween:5,
     slidesPerView:1,
     centeredSlides:true,
     loop:true,
@@ -49,13 +49,12 @@ onMounted(()=>{
 
 <template>
   <div>
-    <div class="relative group" v-if="!loading">
+    <div class="relative" v-if="!loading">
     <div class="absolute -top-6 right-12 w-[90%] h-12 lg:h-[80%] bg-primary/50 blur-3xl rounded-full img-shadow-animation"></div>
     <div>
       <swiper 
-              :style="{'--swiper-navigation-color': '#fff','--swiper-pagination-color': '#fff'}"
               v-bind="swiper_config"
-              class="mySwiper h-[400px] md:h-[900px] mt-0 md:mt-10">
+              class="mySwiper h-[300px] md:h-[900px] mt-0 md:mt-10">
             <swiper-slide class="relative" v-for="(spotlight,index) in spotlight_list" :key="index">
               <div lass="relative">
                 <img :src="spotlight.banner" class="!object-inherit md:!object-cover !h-[500px] md:!h-[900px] overflow-hidden" :alt="spotlight.title" />

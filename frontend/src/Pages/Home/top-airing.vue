@@ -41,7 +41,7 @@ onMounted(()=>{
     
     <div class="relative mt-10" v-if="!loading">
       <div class="flex items-center gap-x-2 mb-4">
-        <span class="inline-block h-[30px] mt-1 w-[5px] bg-primary "></span>
+        <span class="inline-block h-[30px] w-[5px] bg-primary "></span>
           <h1 class="text-lg font-bold">TOP AIRING</h1>
       </div>
       <div class="swiper-container relative">
