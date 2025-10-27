@@ -71,7 +71,7 @@ onMounted(()=>{
             <swiper-slide v-for="(data,index) in data_list" :key="index">
                 <router-link :to="{name:'info',params:{id:data.id}}">
                   <div class="relative group">
-                    <div class="absolute z-10 transition dark:bg-opacity-0 bg-opacity-0 group-hover:bg-opacity-70 w-full h-full  bg-gray-100 dark:bg-gray-900 ">
+                    <div class="absolute z-10 transition  bg-opacity-0 group-hover:bg-muted/80 w-full h-full  bg-gray-100 dark:bg-transparent ">
                       <Icon icon="mdi:play-outline" class="hidden text-primary group-hover:block text-5xl  absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] "/>
                     </div>
                     <img :src="data.image" :alt="data.title" class="rounded h-[200px] sm:h-[300px] lg:h-[350px] w-full overflow-hidden" />

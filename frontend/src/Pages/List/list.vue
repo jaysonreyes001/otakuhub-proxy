@@ -87,6 +87,7 @@
                          <span class="hidden lg:block">Previous</span>
                          </button>
                          <div class="flex items-center gap-x-1">
+                              
                               <button v-if="current_page  > 3" @click="pages(1)" type="button" class="min-h-9.5 min-w-9.5 flex justify-center items-center text-gray-800 hover:bg-gray-100 
                                    py-2 px-3 text-sm rounded-lg focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none 
                                    dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
@@ -108,6 +109,7 @@
                                    dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
                                    {{list_details.totalPages}}
                               </button>
+                              
                          </div>
                          <button :disabled="current_page >= list_details.totalPages ? true : false" @click="pages(current_page+=1)"  type="button" class="min-h-9.5 min-w-9.5 py-2 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm rounded-lg text-gray-800 hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10" aria-label="Next">
                          <span class="hidden lg:block">Next</span>
