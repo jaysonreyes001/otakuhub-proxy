@@ -67,7 +67,7 @@ onMounted(()=>{
         <div class="group relative" v-for="(data,index) in data_list" :key="index">
             <router-link class="h-full " :to="{name:'watch',params:{id:data.id,episode_id:data.sub}}">
               <div class="absolute z-10 transition dark:bg-opacity-0 bg-opacity-0 group-hover:bg-opacity-70 w-full h-full  bg-gray-100 dark:bg-gray-900 ">
-                <Icon icon="mdi:play" class="hidden text-primary group-hover:block text-5xl  absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] "/>
+                <Icon icon="mdi:play-outline" class="hidden text-primary group-hover:block text-5xl  absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] "/>
               </div>
               <div>
                   <div class="image-container rounded w-full relative overflow-hidden block bg-secondary pb-[150%]">
