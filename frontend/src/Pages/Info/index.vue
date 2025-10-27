@@ -125,7 +125,7 @@
               <span class="inline-block h-[30px] w-[5px] bg-primary "></span>
               <h1 class="text-lg font-semibold">TRAILER</h1>
             </div>
-              <iframe :src="anime.mal_details.trailer.embed_url" class="mt-5 w-full h-[700px]"></iframe>
+              <iframe :src="anime.mal_details.trailer.embed_url" class="mt-5 w-full h-[400px] lg:h-[700px]"></iframe>
           </div>
         </div>
 
