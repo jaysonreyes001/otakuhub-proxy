@@ -95,10 +95,10 @@
               <div class="relative group cursor-pointer " v-for="(data,index) in anime.details.episodes" :key="index">
                 <router-link class="h-full" :to="{name:'watch',params:{id:anime.details.id,episode_id:data.number}}">
                   <div class="p-2 absolute bg-slate-600 dark:bg-black transition rounded w-full h-full z-[999] opacity-0 group-hover:opacity-100">
-                    <p class="text-base lg:text-sm line-clamp-2 font-semibold text-gray-300 ">{{anime.details.title}}</p>
-                    <p class="text-white font-semibold text-xl lg:text-lg mt-1">EP {{data.number}} - {{data.title}}</p>
-                    <p class="absolute bottom-2 flex text-primary font-bold text-lg lg:text-md">
-                      <Icon icon="mdi:play" class="text-3xl lg:text-sm  "/>
+                    <p class="text-[7px] lg:text-sm line-clamp-2 font-semibold text-gray-300 ">{{anime.details.title}}</p>
+                    <p class="text-white font-semibold text-[9px] lg:text-lg mt-1">EP {{data.number}} - {{data.title}}</p>
+                    <p class="absolute bottom-2 flex text-primary font-bold text-[9px] lg:text-md">
+                      <Icon icon="mdi:play" class="text-sm  "/>
                       PLAY EP {{data.number}}
                     </p>
                   </div>
