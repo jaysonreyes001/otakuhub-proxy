@@ -42,13 +42,13 @@ onMounted(()=>{
           <img class="w-[180px] h-[100px] rounded-lg" v-else src='@/assets/images/logo-light.png' />
           </a>
         </div>
-        <div class="cols-span-1 lg:col-span-2 lg:mt-0 mt-10">
-          <h3 class="font-bold text-lg mb-5">Genres</h3>
-          <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-5">
+        <div class="cols-span-1 lg:col-span-2">
+          <h3 class="font-bold text-base lg:text-lg mb-2">Genres</h3>
+          <div class="grid grid-cols-4 md:grid-cols-5 lg:grid-cols-5 gap-1 lg:gap-5">
             <div v-for="(genre,index) in genres" :key="index">
               <router-link
                 to="#"
-                class="opacity-60 hover:text-primary capitalize"
+                class="opacity-60 hover:text-primary capitalize text-xs lg:text-base"
               >
                 {{ genre }}
               </router-link>
