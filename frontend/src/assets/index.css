@@ -7,7 +7,7 @@ html {
 }
 
 
-    .custom-prev,
+    .custom-prev,.custom-prev-light,.custom-next-light,
     .custom-next {
     position: absolute;
     top: 50%;
@@ -35,6 +35,21 @@ html {
     .custom-next {
     right: 0px;
     box-shadow: inset -90px 0px 15px -50px rgba(0, 0, 0, 0.5);
+    }
+
+    .custom-prev-light:hover{
+    box-shadow: inset 90px 0px 15px -50px rgba(255, 255, 255, 0.7);
+    }
+    .custom-next-light:hover {
+    box-shadow: inset -90px 0px 15px -50px rgba(255, 255, 255, 0.7);
+    }
+
+    .custom-prev-light{
+    box-shadow: inset 90px 0px 15px -50px rgba(255, 255, 255, 0.5);
+    }
+    .custom-next-light{
+    right: 0px;
+    box-shadow: inset -90px 0px 15px -50px rgba(255, 255, 255, 0.5);
     }
 
 

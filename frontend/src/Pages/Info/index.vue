@@ -175,9 +175,15 @@
               </swiper-slide>
           </swiper>
           <div class="custom-nav">
-                <button class="custom-prev"><Icon icon="material-symbols:arrow-left"/></button>
-                <button class="custom-next"><Icon icon="material-symbols:arrow-right"/></button>
-            </div>
+                  <button :class="{
+                      'custom-prev-light': mode === 'light',
+                      'custom-prev': mode === 'dark',
+                    }"><Icon class="text-primary dark:text-white" icon="material-symbols:arrow-left"/></button>
+                  <button :class="{
+                      'custom-next-light': mode === 'light',
+                      'custom-next': mode === 'dark',
+                    }"><Icon class="text-primary dark:text-white" icon="material-symbols:arrow-right"/></button>
+              </div>
         </div>
       </div>
     </div>
@@ -204,6 +210,10 @@ import { onMounted, reactive, ref, watch } from 'vue';
 import {useRoute} from 'vue-router';
 import axios_instance from '@/plugin/axios.js';
 import axios from 'axios';
+import { useColorMode } from '@vueuse/core';
+
+
+const mode = useColorMode();
 const route  = useRoute();
 const loading = ref(true);
 const anime = reactive({

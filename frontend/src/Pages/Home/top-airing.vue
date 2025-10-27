@@ -10,10 +10,10 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-
 import axios_instance from '@/plugin/axios.js';
 import { onMounted, ref } from 'vue';
-
+import { useColorMode } from '@vueuse/core';
+const mode = useColorMode();
 const data_list = ref([]);
 const loading = ref(false);
 const modules = [Navigation];
@@ -91,8 +91,14 @@ onMounted(()=>{
             </swiper>
 
               <div class="custom-nav">
-                  <button class="custom-prev"><Icon icon="material-symbols:arrow-left"/></button>
-                  <button class="custom-next"><Icon icon="material-symbols:arrow-right"/></button>
+                  <button :class="{
+                      'custom-prev-light': mode === 'light',
+                      'custom-prev': mode === 'dark',
+                    }"><Icon class="text-primary dark:text-white" icon="material-symbols:arrow-left"/></button>
+                  <button :class="{
+                      'custom-next-light': mode === 'light',
+                      'custom-next': mode === 'dark',
+                    }"><Icon class="text-primary dark:text-white" icon="material-symbols:arrow-right"/></button>
               </div>
 
             </div>
