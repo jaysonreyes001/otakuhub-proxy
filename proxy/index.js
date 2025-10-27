@@ -3,8 +3,12 @@ const fetch = require('node-fetch');
 const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 3001;
-
+const NodeCache = require('node-cache');
 app.use(cors());
+
+
+// Initialize cache with a TTL of 10 minutes (600 seconds)
+const cache = new NodeCache({ stdTTL: 600 });
 
 // Simple proxy route for m3u8 and segments
 app.get("/proxy", async (req, res) => {
@@ -12,6 +16,13 @@ app.get("/proxy", async (req, res) => {
   if (!targetUrl) {
     return res.status(400).send("Missing ?url parameter");
   }
+
+
+  // Check cache for the URL
+    const cachedResponse = cache.get(targetUrl);
+    if (cachedResponse) {
+      return res.status(200).send(cachedResponse);
+    }
 
   try {
     const refererUrl = 'https://megacloud.club/';
@@ -49,7 +60,10 @@ app.get("/proxy", async (req, res) => {
         .join('\n');
 
       res.setHeader("Content-Type", "application/vnd.apple.mpegurl");
-      response.body.pipe(res);
+
+      // Cache the response
+      cache.set(targetUrl, rewritten);
+      res.send(rewritten);
     }
     // Handle binary responses (like .ts, .mp4, .key, etc.)
     const contentType = response.headers.get("content-type");
