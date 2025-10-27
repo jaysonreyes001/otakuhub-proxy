@@ -1,12 +1,12 @@
 <template lang="">
      <div>
-          <div class="flex justify-between mb-10 ">
-          <div class="flex items-center gap-x-2 mt-20">
-               <span class="inline-block h-[30px] w-[5px] bg-primary "></span>
-               <h1 class="text-2xl font-semibold">{{title}}</h1>
-          </div>
+          <div class="block lg:flex justify-between mb-10 ">
+               <div class="flex items-center gap-x-2 mt-20">
+                    <span class="inline-block h-[30px] w-[5px] bg-primary "></span>
+                    <h1 class="text-2xl font-semibold">{{title}}</h1>
+               </div>
           <!-- Pagination -->
-               <nav class="flex items-center justify-end gap-x-1 mt-20" aria-label="Pagination">
+               <nav class="flex items-center justify-center lg:justify-end gap-x-1 mt-10" aria-label="Pagination">
                     <button :disabled="current_page <= 1 ? true : false" @click="pages(current_page-=1)" type="button" class="min-h-9.5 min-w-9.5 py-2 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm rounded-lg text-gray-800 hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10" aria-label="Previous">
                          <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                               <path d="m15 18-6-6 6-6"></path>
@@ -79,7 +79,7 @@
                     </div>
                </div>
                <!-- Pagination -->
-               <nav class="flex items-center justify-end gap-x-1 mt-20" aria-label="Pagination">
+               <nav class="flex items-center justify-center lg:justify-end gap-x-1 mt-20" aria-label="Pagination">
                     <button :disabled="current_page <= 1 ? true : false" @click="pages(current_page-=1)" type="button" class="min-h-9.5 min-w-9.5 py-2 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm rounded-lg text-gray-800 hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10" aria-label="Previous">
                          <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                               <path d="m15 18-6-6 6-6"></path>

@@ -135,6 +135,12 @@ const isOpen = ref<boolean>(false);
                   {{ label }}
                 </a>
               </Button>
+
+              <router-link :to="{name:'list',params:{type:'search'}}">
+                <Button variant="ghost" class="justify-start text-base" >
+                    Search
+                </Button>
+              </router-link>
             </div>
           </div>
 
