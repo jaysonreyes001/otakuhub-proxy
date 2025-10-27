@@ -103,12 +103,12 @@
                     </p>
                   </div>
 
-                  <div class="flex gap-x-5 lg:block">
-                      <div class="image-container rounded w-1/2 lg:w-full pb-[20%] lg:pb-[50%] relative overflow-hidden block bg-secondary  ">
+                  <div class="grid grid-cols-2 lg:grid-cols-1 gap-5">
+                      <div class="image-container   w-full pb-[50%] relative overflow-hidden bg-secondary  ">
                         <img :src="anime.details.image" class="absolute z-10 top-0 left-0 right-0 bottom-0 h-full w-full object-cover"  :alt="data.title" />
                       </div>
                       <div>
-                        <p class="break-words text-sm mt-2">{{ data.title }}</p>
+                        <p class="text-sm mt-2">{{ data.title }}</p>
                         <p class="text-gray-400 text-xs mt-1">Episode {{data.number}}</p>
                       </div>
                   </div>
