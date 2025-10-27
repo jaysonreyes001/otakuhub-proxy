@@ -51,7 +51,7 @@
                          <span class="sr-only">Loading...</span>
                     </div>
                </div>
-               <div v-else class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 gap-y-10">
+               <div v-else class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 lg:gap-5 gap-y-10">
                     <div class="group relative" v-for="(data,index) in search_list.results" :key="index">
                          <router-link class="h-full " :to="{name:'info',params:{id:data.id}}">
                               <div class="absolute z-10 transition dark:bg-opacity-0 bg-opacity-0 group-hover:bg-muted/80 w-full h-full  bg-gray-100 dark:bg-transparent ">
@@ -59,10 +59,10 @@
                               </div>
                               <div>
                                    <div
-                                    class="image-container rounded w-full relative overflow-hidden block bg-secondary pb-[60%]">
+                                    class="image-container w-full relative overflow-hidden block bg-secondary pb-[60%]">
                                         <img :src="data.image" class="absolute z-2 top-0 left-0 right-0 bottom-0 h-full w-full object-cover"  :alt="data.title" />
                                    </div>
-                                   <p class="break-words text-xs md:text-sm font-semibold mt-2">{{ data.title }}</p>
+                                   <p class="break-words text-sm md:text-base font-semibold mt-2">{{ data.title }}</p>
                                    <div class="flex justify-between ">
                                    <p class="text-gray-400 text-xs mt-1">Episode {{ data.sub }}</p>
                                    <p class="text-gray-400 text-xs mt-1 ">{{ data.sub > 1 ? 'Sub' : '' }} 

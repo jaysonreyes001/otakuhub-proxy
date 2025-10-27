@@ -51,10 +51,14 @@ onMounted(()=>{
             :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }"
             :breakpoints="{
                 '0': {
-                    slidesPerView: 3,
+                    slidesPerView: 2,
                     spaceBetween:10
                 },
                 '568': {
+                    slidesPerView: 3,
+                    spaceBetween:10
+                },
+                '768': {
                     slidesPerView: 4,
                     spaceBetween:10
                 },
@@ -74,7 +78,7 @@ onMounted(()=>{
                     <div class="absolute z-10 transition  bg-opacity-0 group-hover:bg-muted/80 w-full h-full  bg-gray-100 dark:bg-transparent ">
                       <Icon icon="mdi:play-outline" class="hidden text-primary group-hover:block text-5xl  absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] "/>
                     </div>
-                    <img :src="data.image" :alt="data.title" class="rounded h-[200px] sm:h-[300px] lg:h-[350px] w-full overflow-hidden" />
+                    <img :src="data.image" :alt="data.title" class="h-[300px] sm:h-[300px] lg:h-[350px] w-full overflow-hidden" />
                     <div class="mt-2">
                         <p class="text-sm font-semibold">{{ data?.title }}</p>
                         <div class="flex">
