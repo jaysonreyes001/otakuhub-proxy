@@ -29,7 +29,7 @@ const get_spotlight = async () => {
 }
 
 const swiper_config = {
-    spaceBetween:5,
+    spaceBetween:10,
     slidesPerView:1,
     centeredSlides:true,
     loop:true,
@@ -119,11 +119,6 @@ onMounted(()=>{
 .carousel {
   --vc-nav-background: rgba(255, 255, 255, 0.7);
   --vc-nav-border-radius: 100%;
-}
-img {
-  border-radius: 8px;
-  width: 100%;
-  height: 100%;
 }
 .img-shadow-animation {
   animation-name: img-shadow-animation;
