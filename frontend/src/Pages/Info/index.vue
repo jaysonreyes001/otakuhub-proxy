@@ -90,25 +90,27 @@
            <h1 class="text-lg font-semibold">EPISODES</h1>
         </div>
           <div class="overflow-y-auto max-h-[700px]">
-          <div class="grid grid-cols-3 md:grid-cols-6 gap-5 gap-y-10 mt-5">
+          <div class="grid grid-cols-1 lg:grid-cols-6 gap-5 gap-y-3 lg:gap-y-10 mt-5">
                           
               <div class="relative group cursor-pointer " v-for="(data,index) in anime.details.episodes" :key="index">
-                  <router-link class="h-full " :to="{name:'watch',params:{id:anime.details.id,episode_id:data.number}}">
-                <div class="p-2 absolute bg-slate-600 dark:bg-black transition rounded w-full h-full z-[999] opacity-0 group-hover:opacity-100">
-                  <p class="text-[7px] lg:text-sm line-clamp-2 font-semibold text-gray-300 ">{{anime.details.title}}</p>
-                   <p class="text-white font-semibold text-[9px] lg:text-lg mt-1">EP {{data.number}} - {{data.title}}</p>
-                   <p class="absolute bottom-2 flex text-primary font-bold text-[9px] lg:text-md">
-                    <Icon icon="mdi:play" class="text-sm  "/>
-                    PLAY EP {{data.number}}
-                  </p>
-                </div>
+                <router-link class="h-full" :to="{name:'watch',params:{id:anime.details.id,episode_id:data.number}}">
+                  <div class="p-2 absolute bg-slate-600 dark:bg-black transition rounded w-full h-full z-[999] opacity-0 group-hover:opacity-100">
+                    <p class="text-base lg:text-sm line-clamp-2 font-semibold text-gray-300 ">{{anime.details.title}}</p>
+                    <p class="text-white font-semibold text-xl lg:text-lg mt-1">EP {{data.number}} - {{data.title}}</p>
+                    <p class="absolute bottom-2 flex text-primary font-bold text-lg lg:text-md">
+                      <Icon icon="mdi:play" class="text-3xl lg:text-sm  "/>
+                      PLAY EP {{data.number}}
+                    </p>
+                  </div>
 
-                  <div>
-                      <div class="image-container rounded w-full relative overflow-hidden block bg-secondary pb-[50%]">
+                  <div class="flex gap-x-5 lg:block">
+                      <div class="image-container rounded w-1/2 lg:w-full pb-[20%] lg:pb-[50%] relative overflow-hidden block bg-secondary  ">
                         <img :src="anime.details.image" class="absolute z-10 top-0 left-0 right-0 bottom-0 h-full w-full object-cover"  :alt="data.title" />
-                    </div>
-                    <p class="break-words text-sm mt-2">{{ data.title }}</p>
-                    <p class="text-gray-400 text-xs mt-1">Episode {{data.number}}</p>
+                      </div>
+                      <div>
+                        <p class="break-words text-sm mt-2">{{ data.title }}</p>
+                        <p class="text-gray-400 text-xs mt-1">Episode {{data.number}}</p>
+                      </div>
                   </div>
                  </router-link>
               </div>
