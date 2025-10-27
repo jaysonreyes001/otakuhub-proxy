@@ -3,7 +3,7 @@
     <div v-if="!loading">
       <div class="grid grid-cols-1 lg:grid-cols-2 sm:gap-10 mt-10">
           <img v-if="anime.details.malID == 0" class="rounded h-[500px] lg:h-[900px] w-full" :src="anime.details.image"  />
-          <img v-else class="rounded h-[500px] lg:h-[900px] w-full" :src="anime.mal_details.images.jpg.large_image_url"  />
+          <img v-else class="rounded h-[400px] sm:h-[700px] lg:h-[900px] w-full" :src="anime.mal_details.images.jpg.large_image_url"  />
           <div>
             <p class="text-2xl lg:text-4xl font-bold mt-5 text-center lg:text-left">{{anime.details.title}}</p>
             <div class="mt-5">
