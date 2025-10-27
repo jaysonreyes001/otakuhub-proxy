@@ -198,6 +198,13 @@ const isOpen = ref<boolean>(false);
     </NavigationMenu>
 
     <div class="hidden lg:flex">
+      
+        <button class="rounded transition hover:bg-gray-800 px-2">  
+          <router-link :to="{name:'list',params:{type:'search'}}">
+              <Icon class="text-2xl" icon="ri:search-2-line"/>
+            </router-link>
+        </button>
+
       <ToggleTheme />
     </div>
   </header>

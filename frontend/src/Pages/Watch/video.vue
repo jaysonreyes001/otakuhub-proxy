@@ -69,24 +69,27 @@ const timeToSeconds = (time) => {
 const render_video = () => {
   if (Hls.isSupported()) {
       hls.value = new Hls();
-      hls.value.loadSource(`https://otakuhub-stream-proxy.vercel.app/proxy?url=${encodeURIComponent(source.value)}`);
+      hls.value.loadSource(`http://localhost:3001/proxy?url=${encodeURIComponent(source.value)}`);
       hls.value.attachMedia(video.value);
       hls.value.on(Hls.Events.MANIFEST_PARSED, async () => {
         const track = video.value.addTextTrack('subtitles', 'English', 'en');
         track.mode = 'showing';
         await fetch(subtitle.value.url)
-            .then(response => response.text())
-            .then(subtitles => {
-              const cues = parseVTT(subtitles);
-              // Add the cue to the text track
-              cues.forEach(cue => {
-                const cueElement = new VTTCue(cue.start, cue.end, cue.text);
-                cueElement.position = 50;
-                cueElement.line = 100;
-                track.addCue(cueElement);
-              });
-            })
+          .then(response => response.text())
+          .then(subtitles => {
+            const cues = parseVTT(subtitles);
+            // Add the cue to the text track
+            cues.forEach(cue => {
+              const cueElement = new VTTCue(cue.start, cue.end, cue.text);
+              cueElement.position = 50;
+              cueElement.line = 100;
+              track.addCue(cueElement);
+            });
+          })
       });
+      video.value.addEventListener('play', () => {
+          video.value.requestFullscreen();
+        })
     }
 }
 

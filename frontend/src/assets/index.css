@@ -9,13 +9,13 @@ html {
 
     .custom-prev,.custom-prev-light,.custom-next-light,
     .custom-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    height: 100%;
-    font-size: 50px;
-    transition: box-shadow .3s;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        height: 100%;
+        font-size: 50px;
+        transition: box-shadow .3s;
     }
 
     .swiper-button-disabled{
@@ -80,13 +80,13 @@ html {
     }
 
     ::-webkit-scrollbar-thumb{
-    @apply bg-transparent shadow-sm
+        @apply bg-transparent shadow-sm
     }
     ::-webkit-scrollbar{
-    @apply w-1 dark:bg-slate-800 bg-slate-200
+        @apply w-3 dark:bg-slate-900 bg-slate-200
     }
     ::-webkit-scrollbar-thumb{
-    @apply rounded-none dark:bg-slate-500 bg-primary  /*color trackbar*/
+        @apply rounded dark:bg-slate-700 bg-primary  /*color trackbar*/
     }
 
 /* *=========== Default theme =========== */

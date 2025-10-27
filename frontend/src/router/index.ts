@@ -3,6 +3,7 @@ import { createWebHistory, createRouter } from 'vue-router'
 import Home from "@/Pages/Home/index.vue";
 import Watch from "@/Pages/Watch/index.vue";
 import Info from "@/Pages/Info/index.vue";
+import List from "@/Pages/List/index.vue";
 const routes = [
   { 
     path: '/',
@@ -26,6 +27,14 @@ const routes = [
     component: Info,
     meta:{
       title:"Info"
+    } 
+  },
+  { 
+    path: '/list/:type',
+    name:'list',
+    component: List,
+    meta:{
+      title:"List"
     } 
   },
 ]

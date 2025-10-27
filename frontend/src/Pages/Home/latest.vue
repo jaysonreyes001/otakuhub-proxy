@@ -61,9 +61,11 @@ onMounted(()=>{
           <span class="inline-block h-[30px] w-[5px] bg-primary "></span>
            <h1 class="text-lg font-bold"> LATEST EPISODE</h1>
         </div>
-        <button class="flex items-center text-xs text-gray-500 font-semibold">VIEW ALL
-          <Icon class="ml-1" icon="material-symbols:arrow-forward-ios-rounded"/>
-        </button>
+        <router-link :to="{name:'list',params:{type:'recent-episodes'}}">
+          <button class="transition hover:text-gray-200 flex items-center text-xs text-gray-500 font-semibold">VIEW ALL
+            <Icon class="ml-1" icon="material-symbols:arrow-forward-ios-rounded"/>
+          </button>
+        </router-link>
       </div>
       <div class="grid grid-cols-3 md:grid-cols-6 gap-5 gap-y-10">
         <div class="group relative" v-for="(data,index) in data_list" :key="index">
