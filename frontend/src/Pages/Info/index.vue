@@ -177,7 +177,7 @@
                   </router-link>
               </swiper-slide>
           </swiper>
-          <div class="custom-nav">
+         <div  class="custom-nav hidden lg:block">
                   <button :class="{
                       'custom-prev-light': mode === 'light',
                       'custom-prev': mode === 'dark',
