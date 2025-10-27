@@ -63,7 +63,7 @@ onMounted(()=>{
 <template>
   <div>
     <div class="relative" v-if="!loading">
-    <div class="absolute -top-6 right-12 w-[90%] h-12 lg:h-[80%] bg-primary/50 blur-3xl rounded-full img-shadow-animation"></div>
+    <!-- <div class="absolute -top-6 right-12 w-[90%] h-12 lg:h-[80%] bg-primary/50 blur-3xl rounded-full img-shadow-animation"></div> -->
     <div class="swiper-container relative">
         <swiper :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }" v-bind="swiper_config" class="mySwiper h-[300px] md:h-[900px] mt-0 md:mt-10">
           <swiper-slide class="relative" v-for="(spotlight,index) in spotlight_list" :key="index">
@@ -125,7 +125,7 @@ onMounted(()=>{
               }"><Icon class="text-primary dark:text-white" icon="material-symbols:chevron-right-rounded"/></button>
         </div>
     </div>
-    <div class="absolute bottom-0 left-0 w-full h-20 md:h-28 bg-gradient-to-b from-background/0 via-background/50 to-background rounded-lg"></div>
+    <!-- <div class="absolute bottom-0 left-0 w-full h-20 md:h-28 bg-gradient-to-b from-background/0 via-background/50 to-background rounded-lg"></div> -->
     </div>
     <div class="relative h-[500px] lg:h-[900px]" v-else>
         <span class="absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] ">
