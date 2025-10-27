@@ -95,10 +95,10 @@
               <div class="relative group cursor-pointer " v-for="(data,index) in anime.details.episodes" :key="index">
                   <router-link class="h-full " :to="{name:'watch',params:{id:anime.details.id,episode_id:data.number}}">
                 <div class="p-2 absolute bg-slate-600 dark:bg-black transition rounded w-full h-full z-[999] opacity-0 group-hover:opacity-100">
-                  <p class="text-[7px] line-clamp-2 lg:text-xs font-semibold text-gray-300 ">{{anime.details.title}}</p>
-                   <p class="text-white font-semibold text-[9px] lg:text-md mt-1">EP {{data.number}} - {{data.title}}</p>
+                  <p class="text-[7px] lg:text-sm line-clamp-2 font-semibold text-gray-300 ">{{anime.details.title}}</p>
+                   <p class="text-white font-semibold text-[9px] lg:text-lg mt-1">EP {{data.number}} - {{data.title}}</p>
                    <p class="absolute bottom-2 flex text-primary font-bold text-[9px] lg:text-md">
-                    <Icon icon="mdi:play" class="text-sm lg:text-2xl "/>
+                    <Icon icon="mdi:play" class="text-sm  "/>
                     PLAY EP {{data.number}}
                   </p>
                 </div>
@@ -132,12 +132,11 @@
           <span class="inline-block h-[30px] w-[5px] bg-primary "></span>
            <h1 class="text-lg font-semibold">RECOMMENDATION</h1>
         </div>
+        <div class="relative">
            <swiper
-            :style="{
-                '--swiper-navigation-color': '#fff',
-                '--swiper-pagination-color': '#fff',
-            }"
+           :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }"
             class="mySwiper relative mt-5"
+            :modules="modules"
             :breakpoints="{
                 '0': {
                     slidesPerView: 2,
@@ -175,6 +174,11 @@
                 </router-link>
               </swiper-slide>
           </swiper>
+          <div class="custom-nav">
+                <button class="custom-prev"><Icon icon="material-symbols:arrow-left"/></button>
+                <button class="custom-next"><Icon icon="material-symbols:arrow-right"/></button>
+            </div>
+        </div>
       </div>
     </div>
     <div class="relative h-[400px] lg:h-[950px]" v-else>
@@ -193,6 +197,8 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 // Import Swiper styles
 import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 import { onMounted, reactive, ref, watch } from 'vue';
 import {useRoute} from 'vue-router';
@@ -206,6 +212,8 @@ const anime = reactive({
   episodes:[]
 });
 const anime_id = ref(route.params.id);
+
+const modules = [Navigation];
 
 const get_anime_details = async () => {
   loading.value = true;

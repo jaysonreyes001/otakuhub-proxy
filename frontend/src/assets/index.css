@@ -7,6 +7,36 @@ html {
 }
 
 
+    .custom-prev,
+    .custom-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    height: 100%;
+    font-size: 50px;
+    transition: box-shadow .3s;
+    }
+
+    .swiper-button-disabled{
+    cursor:not-allowed;
+    }
+
+    .custom-prev:hover{
+    box-shadow: inset 90px 0px 15px -50px rgba(0, 0, 0, 0.7);
+    }
+    .custom-next:hover {
+    box-shadow: inset -90px 0px 15px -50px rgba(0, 0, 0, 0.7);
+    }
+
+    .custom-prev{
+    box-shadow: inset 90px 0px 15px -50px rgba(0, 0, 0, 0.5);
+    }
+    .custom-next {
+    right: 0px;
+    box-shadow: inset -90px 0px 15px -50px rgba(0, 0, 0, 0.5);
+    }
+
 
     /* Badge */
     .badge {

@@ -116,7 +116,7 @@ const isOpen = ref<boolean>(false);
                   class="flex items-center"
                 >
                   <img class="w-[120px] h-[60px] rounded-lg"  v-if="mode == 'dark'" src='@/assets/images/logo-dark.png' />
-      <img class="w-[120px] h-[60px] rounded-lg" v-else src='@/assets/images/logo-light.png' />
+                  <img class="w-[120px] h-[60px] rounded-lg" v-else src='@/assets/images/logo-light.png' />
                 </a>
               </SheetTitle>
             </SheetHeader>
@@ -181,7 +181,7 @@ const isOpen = ref<boolean>(false);
         </NavigationMenuItem>
 
         <NavigationMenuItem>
-          <NavigationMenuLink asChild>
+          <!-- <NavigationMenuLink asChild>
             <Button
               v-for="{ href, label } in routeList"
               :key="label"
@@ -193,7 +193,7 @@ const isOpen = ref<boolean>(false);
                 {{ label }}
               </a>
             </Button>
-          </NavigationMenuLink>
+          </NavigationMenuLink> -->
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
