@@ -1,5 +1,5 @@
 <template lang="">
-  <div class="px-10">
+  <div class="px-0 lg:px-10">
     <div v-if="!loading">
       <div class="grid grid-cols-1 lg:grid-cols-2 sm:gap-10 mt-10">
           <img v-if="anime.details.malID == 0" class="rounded h-[500px] lg:h-[900px] w-full" :src="anime.details.image"  />
