@@ -42,10 +42,9 @@
                          </p>
                     </div>
                </div>
-               <div v-if="loading" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4  ">
-                    <div v-for="index in 12" role="status" class="max-w-sm p-4 animate-pulse md:p-6 dark:border-gray-700">
+               <div v-if="loading" class="grid gap-5 lg:gap-2 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4  ">
+                    <div v-for="index in 12" role="status" class="max-w-sm p-1 lg:p-4 animate-pulse md:p-6 dark:border-gray-700">
                          <div class="flex items-center justify-center h-48 mb-4 bg-gray-300 rounded-sm dark:bg-gray-700"></div>
-                         <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4"></div>
                          <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
                          <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
                          <span class="sr-only">Loading...</span>
