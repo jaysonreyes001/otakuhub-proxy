@@ -68,7 +68,7 @@ onMounted(()=>{
         <swiper :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }" v-bind="swiper_config" class="mySwiper h-[350px] lg:h-[1000px] mt-0 md:mt-10">
           <swiper-slide class="relative" v-for="(spotlight,index) in spotlight_list" :key="index">
             <div lass="relative">
-              <img :src="spotlight.banner" class="w-full !object-inherit md:!object-cover !h-[350px] lg:!h-[1200px] overflow-hidden" :alt="spotlight.title" />
+              <img :src="spotlight.banner" class="w-full !object-inherit md:!object-cover !h-[350px] lg:!h-[1000px] overflow-hidden" :alt="spotlight.title" />
                   <div 
                   :class="{
                     'inset-shadow-custom-light': mode === 'light',

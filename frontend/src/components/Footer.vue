@@ -7,11 +7,13 @@ const mode = useColorMode();
 
 
 const genres = ref([]);
-
+const genres_cache = localStorage.getItem('genres');
+console.log(genres_cache);
 const load_generes = async() => {
   await axios_instance.get('/genre/list')
   .then(function(response){
     genres.value = response.data;
+    localStorage.setItem('genres',JSON.stringify(genres.value));
   })
   .catch(error=>{
     console.log(error)
@@ -19,7 +21,12 @@ const load_generes = async() => {
 }
 
 onMounted(()=>{
-  load_generes();
+  if(!genres_cache){
+      load_generes();
+  }
+  else{
+    genres.value = JSON.parse(genres_cache);
+  }
 })
 
 </script>
@@ -47,7 +54,7 @@ onMounted(()=>{
           <div class="grid grid-cols-4 md:grid-cols-5 lg:grid-cols-5 gap-1 lg:gap-5">
             <div v-for="(genre,index) in genres" :key="index">
               <router-link
-                to="#"
+                :to="{name:'list',params:{type:genre}}"
                 class="opacity-60 hover:text-primary capitalize text-xs lg:text-base"
               >
                 {{ genre }}

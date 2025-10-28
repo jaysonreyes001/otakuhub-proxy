@@ -67,7 +67,7 @@ onMounted(()=>{
           </button>
         </router-link>
       </div>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4  lg:grid-cols-5 xl:grid-cols-6 gap-3 lg:gap-5 gap-y-10">
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4  lg:grid-cols-5 xl:grid-cols-6  gap-y-10 gap-x-5">
         <div class="group relative" v-for="(data,index) in data_list" :key="index">
             <router-link class="h-full " :to="{name:'watch',params:{id:data.id,episode_id:data.sub}}">
               <div class="absolute z-10 transition  bg-opacity-0 group-hover:bg-muted/80 w-full h-full  bg-gray-100 dark:bg-transparent ">
