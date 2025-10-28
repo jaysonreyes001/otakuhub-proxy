@@ -1,9 +1,9 @@
 <template lang="">
-  <div class="px-5 sm:px-10 lg:px-0">
+  <div class="px-10">
     <div v-if="!loading">
       <div class="grid grid-cols-1 lg:grid-cols-2 sm:gap-10 mt-10">
           <img v-if="anime.details.malID == 0" class="rounded h-[500px] lg:h-[900px] w-full" :src="anime.details.image"  />
-          <img v-else class="rounded h-[400px] sm:h-[700px] lg:h-[900px] w-full" :src="anime.mal_details.images.jpg.large_image_url"  />
+          <img v-else class="rounded h-[500px] sm:h-[700px] lg:h-[900px] w-full" :src="anime.mal_details.images.jpg.large_image_url"  />
           <div>
             <p class="text-2xl lg:text-4xl font-bold mt-5 text-center lg:text-left">{{anime.details.title}}</p>
             <div class="mt-5">
@@ -165,10 +165,10 @@
           <swiper-slide v-for="(data,index) in anime.details.recommendations" :key="index">
               <router-link :to="{name:'info',params:{id:data.id}}">
                   <div class="relative group">
-                    <div class="absolute z-10 transition  bg-opacity-0 group-hover:bg-muted/80 w-full h-full  bg-gray-100 dark:bg-transparent ">
+                  <div class="absolute z-10 transition  bg-opacity-0 group-hover:bg-muted/80 w-full h-full  bg-gray-100 dark:bg-transparent ">
                       <Icon icon="mdi:play-outline" class="hidden text-primary group-hover:block text-5xl  absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] "/>
                     </div>
-                    <img :src="data.image" :alt="data.title" class="h-[280px] sm:h-[290px] lg:h-[350px] w-full overflow-hidden" />
+                    <img :src="data.image" :alt="data.title" class="h-[300px] sm:h-[300px] md:lg-[350px] lg:h-[400px] xl:h-[450px] w-full overflow-hidden" />
                     <div class="mt-2">
                         <p class="text-sm font-semibold">{{ data?.title }}</p>
                         <div class="flex">

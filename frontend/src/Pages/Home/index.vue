@@ -1,9 +1,11 @@
 <template lang="">
   <div>
     <SlideCarousel/>
-    <topAiring/>
-    <latest/>
-    <img class="mt-[100px]" src="@/assets/images/banner.jpg"/>
+    <div class="px-10">
+      <topAiring/>
+      <latest/>
+      <img class="mt-[100px]" src="@/assets/images/banner.jpg"/>
+    </div>
   </div>
 </template>
 <script setup>

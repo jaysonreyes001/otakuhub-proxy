@@ -65,10 +65,10 @@ onMounted(()=>{
     <div class="relative" v-if="!loading">
     <!-- <div class="absolute -top-6 right-12 w-[90%] h-12 lg:h-[80%] bg-primary/50 blur-3xl rounded-full img-shadow-animation"></div> -->
     <div class="swiper-container relative mt-0 lg:mt-[-50px]">
-        <swiper :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }" v-bind="swiper_config" class="mySwiper h-[400px] lg:h-[1000px] mt-0 md:mt-10">
+        <swiper :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }" v-bind="swiper_config" class="mySwiper h-[350px] lg:h-[1000px] mt-0 md:mt-10">
           <swiper-slide class="relative" v-for="(spotlight,index) in spotlight_list" :key="index">
             <div lass="relative">
-              <img :src="spotlight.banner" class="w-full !object-inherit md:!object-cover !h-[400px] lg:!h-[1200px] overflow-hidden" :alt="spotlight.title" />
+              <img :src="spotlight.banner" class="w-full !object-inherit md:!object-cover !h-[350px] lg:!h-[1200px] overflow-hidden" :alt="spotlight.title" />
                   <div 
                   :class="{
                     'inset-shadow-custom-light': mode === 'light',
