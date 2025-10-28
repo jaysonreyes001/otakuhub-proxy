@@ -27,10 +27,10 @@ const swiper_config = reactive({
     centeredSlides:true,
     effect:'fade',
     loop:false,
-    autoplay:{
-      delay: 5000,
-      disableOnInteraction: false,
-    },
+    // autoplay:{
+    //   delay: 5000,
+    //   disableOnInteraction: false,
+    // },
     pagination:{
       clickable:true,
       renderBullet: function (index, className) {
@@ -64,11 +64,11 @@ onMounted(()=>{
   <div>
     <div class="relative" v-if="!loading">
     <!-- <div class="absolute -top-6 right-12 w-[90%] h-12 lg:h-[80%] bg-primary/50 blur-3xl rounded-full img-shadow-animation"></div> -->
-    <div class="swiper-container relative">
-        <swiper :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }" v-bind="swiper_config" class="mySwiper h-[300px] md:h-[900px] mt-0 md:mt-10">
+    <div class="swiper-container relative mt-0 lg:mt-[-50px]">
+        <swiper :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }" v-bind="swiper_config" class="mySwiper h-[300px] lg:h-[1000px] mt-0 md:mt-10">
           <swiper-slide class="relative" v-for="(spotlight,index) in spotlight_list" :key="index">
             <div lass="relative">
-              <img :src="spotlight.banner" class="rounded !object-inherit md:!object-cover !h-[500px] md:!h-[900px] overflow-hidden" :alt="spotlight.title" />
+              <img :src="spotlight.banner" class="w-full !object-inherit md:!object-cover !h-[500px] lg:!h-[1200px] overflow-hidden" :alt="spotlight.title" />
                   <div 
                   :class="{
                     'inset-shadow-custom-light': mode === 'light',
@@ -85,7 +85,7 @@ onMounted(()=>{
                     <div class="flex items-center h-full  w-[300px] md:w-[600px]">
                       <div class="ml-16 space-y-3 md:space-y-5">
                         <p class="text-primary font-semibold text-md lg:text-xl">#{{ index +1 }} Spotlight</p>
-                        <h1 class="text-sm md:text-4xl dark:text-white text-primary font-bold">{{ spotlight.title }}</h1>
+                        <h1 class="text-sm md:text-xl lg:text-4xl dark:text-white text-primary font-bold">{{ spotlight.title }}</h1>
                         <div class="flex gap-x-5">
                           <div class="flex items-center text-gray-800 dark:text-gray-200 text-xs md:text-xl" v-if="spotlight.type">
                             <Icon icon="mdi:play" class="text-base md:text-xl"/>
@@ -99,10 +99,10 @@ onMounted(()=>{
                             {{ spotlight.quality }}
                           </div>
                         </div>
-                        <p class="text-gray-800 dark:text-gray-200 text-xs md:text-lg line-clamp-3 md:line-clamp-4">{{ spotlight.description }}</p>
+                        <div class="text-gray-800 dark:text-gray-200 text-xs hidden lg:masonry lg:text-lg line-clamp-none lg:line-clamp-4">{{ spotlight.description }}</div>
                         <div>
                           <router-link :to="{name:'info',params:{id:spotlight.id}}">
-                            <button class="btn btn-primary btn-sm sm:btn-lg">
+                            <button class="btn btn-primary btn-sm md:btn-md lg:btn-lg">
                               <Icon icon="mdi:play" class="text-xl mr-1"/>
                                 Start Watching
                             </button>

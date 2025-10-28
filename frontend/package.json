@@ -1,12 +1,7 @@
 {
-  "name": "shadcn-vue-landing-page",
-  "description": "Shadcn/Vue landing page template using Vue, Shadcn/Vue + TypeScript + Tailwind CSS.",
+  "name": "Otaku Hub",
+  "description": "Otaku Hub",
   "version": "0.1.1",
-  "author": {
-    "name": "Leopoldo Miranda",
-    "email": "leomirandadev@gmail.com",
-    "url": "https://github.com/leomirandaa"
-  },
   "keywords": [
     "vue",
     "typescript",
