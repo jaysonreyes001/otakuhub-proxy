@@ -1,5 +1,5 @@
 <template lang="">
-     <div>
+     <div class="mt-[50px]">
           <form @submit.prevent="search_function" class="max-w-4xl mx-auto">   
                <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                <div class="relative">

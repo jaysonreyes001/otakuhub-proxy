@@ -69,7 +69,7 @@ const timeToSeconds = (time) => {
 const render_video = () => {
   if (Hls.isSupported()) {
       hls.value = new Hls();
-      hls.value.loadSource(`http://localhost:3001/proxy?url=${encodeURIComponent(source.value)}`);
+      hls.value.loadSource(`https://otakuhub-stream-proxy.vercel.app/proxy?url=${encodeURIComponent(source.value)}`);
       hls.value.attachMedia(video.value);
       hls.value.on(Hls.Events.MANIFEST_PARSED, async () => {
         const track = video.value.addTextTrack('subtitles', 'English', 'en');

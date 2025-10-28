@@ -1,5 +1,5 @@
 <template lang="">
-  <div class="w-full">
+  <div class="w-full mt-[50px]">
 
     <Video v-if="!video_loading" :episode_details="episode_details" />
     <div class="relative w-full h-[400px] md:h-[800px]" v-else>
