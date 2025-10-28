@@ -1,7 +1,7 @@
 <template lang="">
   <div>
     <SlideCarousel/>
-    <div class="px-10">
+    <div class="px-0 lg:px-10">
       <topAiring/>
       <latest/>
       <img class="mt-[100px]" src="@/assets/images/banner.jpg"/>
