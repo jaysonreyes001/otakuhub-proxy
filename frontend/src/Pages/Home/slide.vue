@@ -25,7 +25,6 @@ const swiper_config = reactive({
     spaceBetween:10,
     slidesPerView:1,
     centeredSlides:true,
-    effect:'fade',
     loop:false,
     autoplay:{
       delay: 5000,
