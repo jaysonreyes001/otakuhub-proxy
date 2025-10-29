@@ -108,13 +108,15 @@ onMounted(()=>{
           </swiper-slide>
         </swiper>
         <div  class="custom-nav">
-            <button class="slide-prev" :class="{
+            <button :class="{
                 'custom-prev-light': mode === 'light',
                 'custom-prev': mode === 'dark',
+                'slide-prev':true
               }"><Icon class="text-primary dark:text-white" icon="material-symbols:chevron-left-rounded"/></button>
             <button class="slide-next" :class="{
                 'custom-next-light': mode === 'light',
                 'custom-next': mode === 'dark',
+                'slide-next':true
               }"><Icon class="text-primary dark:text-white" icon="material-symbols:chevron-right-rounded"/></button>
         </div>
     </div>

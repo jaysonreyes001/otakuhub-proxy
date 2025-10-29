@@ -48,7 +48,7 @@ onMounted(()=>{
       <swiper
             :modules="modules"
             class="mySwiper relative"
-            :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }"
+            :navigation="{ nextEl: '.top-airing-next', prevEl: '.top-airing-prev' }"
             :breakpoints="{
                 '0': {
                     slidesPerView: 2,
@@ -101,10 +101,12 @@ onMounted(()=>{
                   <button :class="{
                       'custom-prev-light': mode === 'light',
                       'custom-prev': mode === 'dark',
+                      'top-airing-prev' : true
                     }"><Icon class="text-primary dark:text-white" icon="material-symbols:arrow-left"/></button>
                   <button :class="{
                       'custom-next-light': mode === 'light',
                       'custom-next': mode === 'dark',
+                      'top-airing-next' : true
                     }"><Icon class="text-primary dark:text-white" icon="material-symbols:arrow-right"/></button>
               </div>
 
