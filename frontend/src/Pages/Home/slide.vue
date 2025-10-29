@@ -27,10 +27,10 @@ const swiper_config = reactive({
     centeredSlides:true,
     effect:'fade',
     loop:false,
-    // autoplay:{
-    //   delay: 5000,
-    //   disableOnInteraction: false,
-    // },
+    autoplay:{
+      delay: 5000,
+      disableOnInteraction: false,
+    },
     pagination:{
       clickable:true,
       renderBullet: function (index, className) {
@@ -65,7 +65,7 @@ onMounted(()=>{
     <div class="relative" v-if="!loading">
     <!-- <div class="absolute -top-6 right-12 w-[90%] h-12 lg:h-[80%] bg-primary/50 blur-3xl rounded-full img-shadow-animation"></div> -->
     <div class="swiper-container relative">
-        <swiper :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }" v-bind="swiper_config">
+        <swiper :navigation="{ nextEl: '.slide-next', prevEl: '.slide-prev' }" v-bind="swiper_config">
           <swiper-slide class="relative" v-for="(spotlight,index) in spotlight_list" :key="index">
             <div lass="relative">
               <div class="image-container w-full relative overflow-hidden block bg-secondary pb-[70%] lg:pb-[45%]">
@@ -122,11 +122,11 @@ onMounted(()=>{
           </swiper-slide>
         </swiper>
         <div  class="custom-nav">
-            <button :class="{
+            <button class="slide-prev" :class="{
                 'custom-prev-light': mode === 'light',
                 'custom-prev': mode === 'dark',
               }"><Icon class="text-primary dark:text-white" icon="material-symbols:chevron-left-rounded"/></button>
-            <button :class="{
+            <button class="slide-next" :class="{
                 'custom-next-light': mode === 'light',
                 'custom-next': mode === 'dark',
               }"><Icon class="text-primary dark:text-white" icon="material-symbols:chevron-right-rounded"/></button>
