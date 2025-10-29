@@ -76,7 +76,7 @@ onMounted(()=>{
               </div>
                   <div class="absolute z-[999] top-0 left-0 w-full h-full ">
                     <div class="flex items-center h-full  w-[300px] md:w-[600px] lg:w-[800px]">
-                      <div class="ml-16 space-y-1 md:space-y-5">
+                      <div class="ml-10 md:ml-16 space-y-1 md:space-y-5">
                         <p class="text-gray-700 dark:text-primary font-semibold text-md lg:text-2xl">#{{ index +1 }} Spotlight</p>
                         <h1 class="text-lg line-clamp-3 md:text-2xl lg:text-5xl dark:text-white text-primary font-bold">{{ spotlight.title }}</h1>
                         <div class="flex gap-x-5">
@@ -95,7 +95,7 @@ onMounted(()=>{
                         <div class="text-gray-700 dark:text-gray-100 text-xs hidden lg:masonry lg:text-lg line-clamp-none lg:line-clamp-4">{{ spotlight.description }}</div>
                         <div>
                           <router-link :to="{name:'info',params:{id:spotlight.id}}">
-                            <button class="mt-[20px] btn btn-primary btn-sm md:btn-md lg:btn-lg">
+                            <button class="mt-[10px] btn btn-primary btn-sm md:btn-md lg:btn-lg">
                               <Icon icon="ic:baseline-airplay" class="text-xl mr-1"/>
                                 Start Watching 
                             </button>
