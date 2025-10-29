@@ -75,6 +75,7 @@ onMounted(()=>{
               </div>
               <div>
                   <div class="image-container w-full relative overflow-hidden block bg-secondary pb-[150%]">
+                    <div class="z-[99] absolute top-0 left-0 bottom-0 right-0 bg-gradient-to-t from-[#ffffff] via-transparent to-50%  dark:from-[#000000] dark:via-transparent dark:to-50%"></div>
                     <img :src="data.image" class="absolute z-2 top-0 left-0 right-0 bottom-0 h-full w-full object-cover"  :alt="data.title" />
                 </div>
                 <p class="break-words text-sm md:text-base font-semibold mt-2">{{ data.title }}</p>
