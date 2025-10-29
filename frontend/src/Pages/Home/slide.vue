@@ -64,12 +64,19 @@ onMounted(()=>{
   <div>
     <div class="relative" v-if="!loading">
     <!-- <div class="absolute -top-6 right-12 w-[90%] h-12 lg:h-[80%] bg-primary/50 blur-3xl rounded-full img-shadow-animation"></div> -->
-    <div class="swiper-container relative mt-0 lg:mt-[-50px]">
-        <swiper :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }" v-bind="swiper_config" class="mySwiper h-[350px] lg:h-[1000px] mt-0 md:mt-10">
+    <div class="swiper-container relative">
+        <swiper :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }" v-bind="swiper_config">
           <swiper-slide class="relative" v-for="(spotlight,index) in spotlight_list" :key="index">
             <div lass="relative">
-              <img :src="spotlight.banner" class="w-full !object-inherit md:!object-cover !h-[350px] lg:!h-[1000px] overflow-hidden" :alt="spotlight.title" />
-                  <div 
+              <div class="image-container w-full relative overflow-hidden block bg-secondary pb-[45%]">
+              <div class="z-[99] absolute top-0 left-0 bottom-0 right-0 bg-gradient-to-t from-[#000000] via-transparent to-[#000000]"></div>
+              <div class="z-[99] absolute top-0 left-0 bottom-0 right-0 bg-gradient-to-r from-[#000000] via-transparent to-100%"></div>
+              <div class="z-[99] absolute top-0 left-0 bottom-0 right-0 bg-gradient-to-l from-[#000000] via-transparent to-5%"></div>
+                <!-- <img :src="spotlight.banner" class="w-full !object-inherit md:!object-cover !h-[350px] lg:!h-[1000px] overflow-hidden" :alt="spotlight.title" /> -->
+                <img :src="spotlight.banner" class="absolute z-2 top-0 left-0 right-0 bottom-0 h-full w-full object-cover"  :alt="spotlight.title" />
+              </div>
+              
+                  <!-- <div 
                   :class="{
                     'inset-shadow-custom-light': mode === 'light',
                     'inset-shadow-custom-dark': mode === 'dark',
@@ -80,8 +87,8 @@ onMounted(()=>{
                     'inset-shadow-custom2-light': mode === 'light',
                     'inset-shadow-custom2-dark': mode === 'dark',
                   }"
-                  class="absolute top-0 left-0 h-full w-full inset-shadow-custom2"></div>
-                  <div class="absolute top-0 left-0 w-full h-full ">
+                  class="absolute top-0 left-0 h-full w-full inset-shadow-custom2"></div> -->
+                  <div class="absolute z-[999] top-0 left-0 w-full h-full ">
                     <div class="flex items-center h-full  w-[300px] md:w-[600px]">
                       <div class="ml-16 space-y-3 md:space-y-5">
                         <p class="text-primary font-semibold text-md lg:text-xl">#{{ index +1 }} Spotlight</p>
@@ -99,7 +106,7 @@ onMounted(()=>{
                             {{ spotlight.quality }}
                           </div>
                         </div>
-                        <div class="text-gray-800 dark:text-gray-200 text-xs hidden lg:masonry lg:text-lg line-clamp-none lg:line-clamp-4">{{ spotlight.description }}</div>
+                        <div class="text-gray-800 dark:text-gray-100 text-xs hidden lg:masonry lg:text-lg line-clamp-none lg:line-clamp-4">{{ spotlight.description }}</div>
                         <div>
                           <router-link :to="{name:'info',params:{id:spotlight.id}}">
                             <button class="btn btn-primary btn-sm md:btn-md lg:btn-lg">
@@ -134,7 +141,6 @@ onMounted(()=>{
     </div>
   </div>
 </template>
->
 <style scoped>
 :root {
   background-color: #242424;
