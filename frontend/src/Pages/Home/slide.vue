@@ -72,22 +72,8 @@ onMounted(()=>{
               <div class="z-[99] absolute top-0 left-0 bottom-0 right-0 bg-gradient-to-t from-[#ffffff] via-transparent to-[#ffffff]  dark:from-[#000000] dark:via-transparent dark:to-[#000000]"></div>
               <div class="z-[99] absolute top-0 left-0 bottom-0 right-0 bg-gradient-to-r from-[#ffffff] via-transparent to-100% dark:from-[#000000] dark:via-transparent dark:to-100%"></div>
               <div class="z-[99] absolute top-0 left-0 bottom-0 right-0 bg-gradient-to-l dark:from-[#000000] dark:via-transparent dark:to-5%"></div>
-                <!-- <img :src="spotlight.banner" class="w-full !object-inherit md:!object-cover !h-[350px] lg:!h-[1000px] overflow-hidden" :alt="spotlight.title" /> -->
                 <img :src="spotlight.banner" class="absolute z-2 top-0 left-0 right-0 bottom-0 h-full w-full object-cover"  :alt="spotlight.title" />
               </div>
-              
-                  <!-- <div 
-                  :class="{
-                    'inset-shadow-custom-light': mode === 'light',
-                    'inset-shadow-custom-dark': mode === 'dark',
-                  }"
-                  class="absolute top-0 left-0 h-full w-full "></div>
-                  <div 
-                  :class="{
-                    'inset-shadow-custom2-light': mode === 'light',
-                    'inset-shadow-custom2-dark': mode === 'dark',
-                  }"
-                  class="absolute top-0 left-0 h-full w-full inset-shadow-custom2"></div> -->
                   <div class="absolute z-[999] top-0 left-0 w-full h-full ">
                     <div class="flex items-center h-full  w-[300px] md:w-[600px] lg:w-[800px]">
                       <div class="ml-16 space-y-1 md:space-y-5">
@@ -109,9 +95,9 @@ onMounted(()=>{
                         <div class="text-gray-700 dark:text-gray-100 text-xs hidden lg:masonry lg:text-lg line-clamp-none lg:line-clamp-4">{{ spotlight.description }}</div>
                         <div>
                           <router-link :to="{name:'info',params:{id:spotlight.id}}">
-                            <button class="btn btn-primary btn-sm md:btn-md lg:btn-lg">
+                            <button class="mt-[20px] btn btn-primary btn-sm md:btn-md lg:btn-lg">
                               <Icon icon="ic:baseline-airplay" class="text-xl mr-1"/>
-                                Start Watching
+                                Start Watching 
                             </button>
                           </router-link>
                         </div>
