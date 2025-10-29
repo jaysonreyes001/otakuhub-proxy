@@ -1,15 +1,15 @@
 <template lang="">
   <div class="px-0 lg:px-10">
     <div v-if="!loading">
-      <div class="grid grid-cols-1 xl:grid-cols-3 sm:gap-10 mt-10">
-          <div>
+      <div class="grid grid-cols-1 xl:grid-cols-3  sm:gap-10 mt-10">
+          <div class="overflow-hidden">
             <div class="mx-auto relative block w-96 pb-[120%] md:pb-[50%] xl:pb-[90%]">
               <img v-if="anime.details.malID == 0" class="rounded h-[500px] lg:h-[900px] w-full" :src="anime.details.image"  />
               <img v-else class="rounded cover absolute w-full h-full" :src="anime.mal_details.images.jpg.large_image_url"  />
             </div>
           </div>
-          <div class="col-span-2  mt-10 xl:mt-0">
-            <p class="text-2xl lg:text-4xl font-bold text-center lg:text-left">{{anime.details.title}}</p>
+          <div class="col-span-2 mt-5 md:mt-0">
+            <p class="text-2xl md:text-4xl font-bold text-center lg:text-left">{{anime.details.title}}</p>
             <div class="mt-5">
               <i class="badge bg-slate-600" v-if="anime.details.malID != 0">{{anime.mal_details.rating.split(' ')[0]}}</i>
               <span class="text-sm dark:text-gray-300">{{anime.details.hasSub ? ' • Sub' : '' }}</span>
@@ -98,7 +98,7 @@
                           
               <div class="relative group cursor-pointer " v-for="(data,index) in anime.details.episodes" :key="index">
                 <router-link class="h-full" :to="{name:'watch',params:{id:anime.details.id,episode_id:data.number}}">
-                  <div class="p-2 absolute bg-slate-600 dark:bg-black transition rounded w-full h-full z-[999] opacity-0 group-hover:opacity-100">
+                  <div class="p-2 absolute bg-primary dark:bg-black transition rounded w-full h-full z-[999] opacity-0 group-hover:opacity-100">
                     <p class="text-[7px] lg:text-sm line-clamp-2 font-semibold text-gray-300 ">{{anime.details.title}}</p>
                     <p class="text-white font-semibold text-[9px] lg:text-lg mt-1">EP {{data.number}} - {{data.title}}</p>
                     <p class="absolute bottom-2 flex text-primary font-bold text-[9px] lg:text-md">
