@@ -88,7 +88,7 @@ onMounted(()=>{
                             <Icon icon="mdi:clock" class="text-xs  md:text-xl"/>
                             {{ spotlight.duration }}
                           </div>
-                          <div class="badge bg-primary text-xs md:text-lg" v-if="spotlight.quality">
+                          <div class="badge bg-primary dark:bg-gray-800 text-xs md:text-lg" v-if="spotlight.quality">
                             {{ spotlight.quality }}
                           </div>
                         </div>
