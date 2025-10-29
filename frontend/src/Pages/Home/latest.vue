@@ -62,7 +62,7 @@ onMounted(()=>{
            <h1 class="text-lg font-bold"> LATEST EPISODE</h1>
         </div>
         <router-link :to="{name:'list',params:{type:'recent-episodes'}}">
-          <button class="transition hover:text-gray-200 flex items-center text-xs text-gray-500 font-semibold">VIEW ALL
+          <button class="transition hover:text-gray-200 flex items-center text-xs text-gray-500 font-semibold">VIEW ALL 
             <Icon class="ml-1" icon="material-symbols:arrow-forward-ios-rounded"/>
           </button>
         </router-link>
