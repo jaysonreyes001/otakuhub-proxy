@@ -3,7 +3,7 @@
     <div v-if="!loading">
       <div class="grid grid-cols-1 xl:grid-cols-3  sm:gap-10 mt-10">
           <div class="overflow-hidden">
-            <div class="mx-auto relative block w-96 pb-[120%] md:pb-[50%] xl:pb-[90%]">
+            <div class="mx-auto relative block w-96 pb-[120%] md:pb-[70%] xl:pb-[90%]">
               <img v-if="anime.details.malID == 0" class="rounded h-[500px] lg:h-[900px] w-full" :src="anime.details.image"  />
               <img v-else class="rounded cover absolute w-full h-full" :src="anime.mal_details.images.jpg.large_image_url"  />
             </div>
