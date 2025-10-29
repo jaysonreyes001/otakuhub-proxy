@@ -145,7 +145,7 @@
                 <router-link :to="{name:'info',params:{id:data.id}}">
                     <Image :url="data.image">
                       <template #footer>
-                        <p class="break-words text-sm lg:text-xl font-semibold mt-2">{{ data.title }}</p>
+                        <p class="break-words text-sm lg:text-lg font-semibold mt-2">{{ data.title }}</p>
                           <div class="flex justify-between ">
                             <p class="text-gray-400 text-xs mt-1">Episode {{ data.sub }}</p>
                             <p class="text-gray-400 text-xs mt-1 ">{{ data.sub > 1 ? 'Sub' : '' }} 

@@ -31,7 +31,7 @@ onMounted(()=>{
            <h1 class="text-lg font-bold"> LATEST EPISODE</h1>
         </div>
         <router-link :to="{name:'list',params:{type:'recent-episodes'}}">
-          <button class="transition hover:text-gray-200 flex items-center text-xs text-gray-500 font-semibold">VIEW ALL 
+          <button class="transition hover:text-gray-200 flex items-center text-xs text-gray-400 font-bold">VIEW ALL 
             <Icon class="ml-1" icon="material-symbols:arrow-forward-ios-rounded"/>
           </button>
         </router-link>
@@ -41,7 +41,7 @@ onMounted(()=>{
             <router-link class="h-full" :to="{name:'watch',params:{id:data.id,episode_id:data.sub}}">
               <Image :url="data.image">
                 <template #footer>
-                  <p class="break-words text-sm lg:text-xl font-semibold mt-2">{{ data.title }}</p>
+                  <p class="break-words text-sm lg:text-lg font-semibold mt-2">{{ data.title }}</p>
                     <div class="flex justify-between ">
                       <p class="text-gray-400 text-xs mt-1">Episode {{ data.sub }}</p>
                       <p class="text-gray-400 text-xs mt-1 ">{{ data.sub > 1 ? 'Sub' : '' }} 
