@@ -71,14 +71,14 @@ onMounted(()=>{
         <div class="group relative" v-for="(data,index) in data_list" :key="index">
             <router-link class="h-full " :to="{name:'watch',params:{id:data.id,episode_id:data.sub}}">
               <div class="absolute z-10 transition  bg-opacity-0 group-hover:bg-muted/80 w-full h-full  bg-gray-100 dark:bg-transparent ">
-                <Icon icon="mdi:play-outline" class="hidden text-primary group-hover:block text-5xl  absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] "/>
+                <Icon icon="ic:baseline-airplay" class="hidden text-primary group-hover:block text-5xl  absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] "/>
               </div>
               <div>
                   <div class="image-container w-full relative overflow-hidden block bg-secondary pb-[150%]">
                     <div class="z-[99] absolute top-0 left-0 bottom-0 right-0 bg-gradient-to-t from-[#ffffff] via-transparent to-50%  dark:from-[#000000] dark:via-transparent dark:to-50%"></div>
                     <img :src="data.image" class="absolute z-2 top-0 left-0 right-0 bottom-0 h-full w-full object-cover"  :alt="data.title" />
                 </div>
-                <p class="break-words text-sm md:text-base font-semibold mt-2">{{ data.title }}</p>
+                <p class="break-words text-sm lg:text-xl font-semibold mt-2">{{ data.title }}</p>
                 <div class="flex justify-between ">
                   <p class="text-gray-400 text-xs mt-1">Episode {{ data.sub }}</p>
                   <p class="text-gray-400 text-xs mt-1 ">{{ data.sub > 1 ? 'Sub' : '' }} 

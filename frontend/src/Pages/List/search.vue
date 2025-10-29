@@ -54,7 +54,7 @@
                     <div class="group relative" v-for="(data,index) in search_list.results" :key="index">
                          <router-link class="h-full " :to="{name:'info',params:{id:data.id}}">
                               <div class="absolute z-10 transition dark:bg-opacity-0 bg-opacity-0 group-hover:bg-muted/80 w-full h-full  bg-gray-100 dark:bg-transparent ">
-                                   <Icon icon="mdi:play-outline" class="hidden text-primary group-hover:block text-5xl  absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] "/>
+                                   <Icon icon="ic:baseline-airplay" class="hidden text-primary group-hover:block text-5xl  absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] "/>
                               </div>
                               <div>
                                    <div

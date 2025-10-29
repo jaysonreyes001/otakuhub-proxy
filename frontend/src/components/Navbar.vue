@@ -205,7 +205,7 @@ const isOpen = ref<boolean>(false);
 
     <div class="hidden lg:flex">
       
-        <button class="rounded transition hover:bg-gray-800 px-2">  
+        <button class="rounded transition  hover:bg-gray-200 hover:dark:bg-gray-800 px-2">  
           <router-link :to="{name:'list',params:{type:'search'}}">
               <Icon class="text-2xl" icon="ri:search-2-line"/>
             </router-link>
