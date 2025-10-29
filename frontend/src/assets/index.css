@@ -19,37 +19,37 @@ html {
     }
 
     .swiper-button-disabled{
-    cursor:not-allowed;
+        cursor:not-allowed;
     }
 
     .custom-prev:hover{
-    box-shadow: inset 90px 0px 15px -50px rgba(0, 0, 0, 0.7);
+        box-shadow: inset 90px 0px 15px -50px rgba(0, 0, 0, 0.7);
     }
     .custom-next:hover {
-    box-shadow: inset -90px 0px 15px -50px rgba(0, 0, 0, 0.7);
+        box-shadow: inset -90px 0px 15px -50px rgba(0, 0, 0, 0.7);
     }
 
     .custom-prev{
-    box-shadow: inset 90px 0px 15px -50px rgba(0, 0, 0, 0.5);
+        box-shadow: inset 90px 0px 15px -50px rgba(0, 0, 0, 0.5);
     }
     .custom-next {
-    right: 0px;
-    box-shadow: inset -90px 0px 15px -50px rgba(0, 0, 0, 0.5);
+        right: 0px;
+        box-shadow: inset -90px 0px 15px -50px rgba(0, 0, 0, 0.5);
     }
 
     .custom-prev-light:hover{
-    box-shadow: inset 90px 0px 15px -50px rgba(255, 255, 255, 0.7);
+        box-shadow: inset 90px 0px 15px -50px rgba(255, 255, 255, 0.7);
     }
     .custom-next-light:hover {
-    box-shadow: inset -90px 0px 15px -50px rgba(255, 255, 255, 0.7);
+        box-shadow: inset -90px 0px 15px -50px rgba(255, 255, 255, 0.7);
     }
 
     .custom-prev-light{
-    box-shadow: inset 90px 0px 15px -50px rgba(255, 255, 255, 0.5);
+        box-shadow: inset 90px 0px 15px -50px rgba(255, 255, 255, 0.5);
     }
     .custom-next-light{
-    right: 0px;
-    box-shadow: inset -90px 0px 15px -50px rgba(255, 255, 255, 0.5);
+        right: 0px;
+        box-shadow: inset -90px 0px 15px -50px rgba(255, 255, 255, 0.5);
     }
 
 

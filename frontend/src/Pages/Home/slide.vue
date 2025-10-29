@@ -77,7 +77,7 @@ onMounted(()=>{
                     <div class="flex items-center h-full  w-[300px] md:w-[600px] lg:w-[800px]">
                       <div class="ml-10 md:ml-16 space-y-1 md:space-y-5">
                         <p class="text-gray-700 dark:text-primary font-semibold text-md lg:text-2xl">#{{ index +1 }} Spotlight</p>
-                        <h1 class="text-lg line-clamp-3 md:text-2xl lg:text-5xl dark:text-white text-primary font-bold">{{ spotlight.title }}</h1>
+                        <h1 class="text-lg line-clamp-3 md:text-2xl lg:text-5xl dark:text-white text-gray-800 font-bold">{{ spotlight.title }}</h1>
                         <div class="flex gap-x-5">
                           <div class="flex items-center text-gray-700 dark:text-gray-200 text-xs md:text-xl" v-if="spotlight.type">
                             <Icon icon="mdi:play" class="text-base md:text-xl"/>
@@ -91,7 +91,7 @@ onMounted(()=>{
                             {{ spotlight.quality }}
                           </div>
                         </div>
-                        <div class="text-gray-700 dark:text-gray-100 text-xs hidden lg:masonry lg:text-lg line-clamp-none lg:line-clamp-4">{{ spotlight.description }}</div>
+                        <div class="text-gray-900 dark:text-gray-100 text-xs hidden lg:masonry lg:text-lg line-clamp-none lg:line-clamp-4">{{ spotlight.description }}</div>
                         <div>
                           <router-link :to="{name:'info',params:{id:spotlight.id}}">
                             <button class="mt-[10px] btn btn-primary btn-sm md:btn-md lg:btn-lg">
@@ -123,7 +123,7 @@ onMounted(()=>{
     </div>
     <div class="relative h-[500px] lg:h-[900px]" v-else>
         <span class="absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] ">
-          <span class="animate-spin border-2 border-white border-l-transparent rounded-full w-20 h-20  inline-block  "></span>
+          <span class="animate-spin border-2 border-black dark:border-white border-l-transparent rounded-full w-20 h-20  inline-block  "></span>
         </span>
     </div>
   </div>

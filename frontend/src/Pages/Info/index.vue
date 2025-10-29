@@ -34,7 +34,7 @@
                 <div class="text-sm">Aried</div>
                 <div class="text-xs">{{anime.mal_details.aired.string}}</div>
               </div>
-              <hr class="border-t border-gray-800 my-3">
+              <hr class="border-t border-gray-300 dark:border-gray-800 my-3">
             </div>
 
             <div v-if="anime.details.malID != 0">
@@ -42,7 +42,7 @@
                 <div class="text-sm">Duration</div>
                 <div class="text-xs">{{anime.mal_details.duration}}</div>
               </div>
-              <hr class="border-t border-gray-800 my-3">
+              <hr class="border-t border-gray-300 dark:border-gray-800 my-3">
             </div>
 
             <div>
@@ -50,7 +50,7 @@
                 <div class="text-sm">Status</div>
                 <div class="text-xs">{{anime.details.status}}</div>
               </div>
-              <hr class="border-t border-gray-800 my-3">
+              <hr class="border-t border-gray-300 dark:border-gray-800 my-3">
             </div>
 
             <div>
@@ -58,7 +58,7 @@
                 <div class="text-sm">Premiered</div>
                 <div class="text-xs">{{anime.details.season}}</div>
               </div>
-              <hr class="border-t border-gray-800 my-3">
+              <hr class="border-t border-gray-300 dark:border-gray-800 my-3">
             </div>
 
             <div>
@@ -66,7 +66,7 @@
                 <div class="text-sm">Genres</div>
                 <div class="text-xs">{{anime.details.genres.join(' • ')}}</div>
               </div>
-              <hr class="border-t border-gray-800 my-3">
+              <hr class="border-t border-gray-300 dark:border-gray-800 my-3">
             </div>
 
             <div v-if="anime.details.malID != 0">
@@ -74,7 +74,7 @@
                 <div class="text-sm">Studios</div>
                 <div class="text-xs">{{anime.mal_details.studios.map(item => item.name).join(' , ')}}</div>
               </div>
-              <hr class="border-t border-gray-800 my-3">
+              <hr class="border-t border-gray-300 dark:border-gray-800 my-3">
             </div>
             
             <div v-if="anime.details.malID != 0">
@@ -82,7 +82,7 @@
                 <div class="text-sm">Producers</div>
                 <div class="text-xs">{{anime.mal_details.producers.map(item => item.name).join(' , ')}}</div>
               </div>
-              <hr class="border-t border-gray-800 my-3">
+              <hr class="border-t border-gray-300 dark:border-gray-800 my-3">
             </div>
 
           </div>
@@ -92,19 +92,21 @@
         <div class="flex items-center gap-x-2">
           <span class="inline-block h-[30px] w-[5px] bg-primary "></span>
            <h1 class="text-lg font-semibold">EPISODES</h1>
-        </div>
+          </div>
           <div class="overflow-y-auto max-h-[700px]">
           <div class="grid grid-cols-1 lg:grid-cols-6 gap-5 gap-y-3 lg:gap-y-10 mt-5">
                           
               <div class="relative group cursor-pointer " v-for="(data,index) in anime.details.episodes" :key="index">
                 <router-link class="h-full" :to="{name:'watch',params:{id:anime.details.id,episode_id:data.number}}">
-                  <div class="p-2 absolute bg-primary dark:bg-black transition rounded w-full h-full z-[999] opacity-0 group-hover:opacity-100">
-                    <p class="text-[7px] lg:text-sm line-clamp-2 font-semibold text-gray-300 ">{{anime.details.title}}</p>
-                    <p class="text-white font-semibold text-[9px] lg:text-lg mt-1">EP {{data.number}} - {{data.title}}</p>
-                    <p class="absolute bottom-2 flex text-primary font-bold text-[9px] lg:text-md">
-                      <Icon icon="mdi:play" class="text-sm  "/>
-                      PLAY EP {{data.number}}
-                    </p>
+                  <div class="p-2 absolute bg-gray-100 dark:bg-black transition  w-full h-full z-[20] bg-opacity-0 dark:bg-transparent group-hover:bg-muted/90">
+                    <div class="hidden group-hover:block">
+                        <p class="text-[7px] lg:text-sm line-clamp-2 font-semibold text-gray-700 dark:text-gray-300 ">{{anime.details.title}}</p>
+                        <p class="text-black dark:text-white font-semibold text-[9px] lg:text-lg mt-1">EP {{data.number}} - {{data.title}}</p>
+                        <p class="absolute bottom-2 flex text-primary font-bold text-[9px] lg:text-lg">
+                          <Icon icon="ic:baseline-airplay" class="text-sm lg:text-2xl mr-2  "/>
+                          PLAY EP {{data.number}}
+                        </p>
+                    </div>
                   </div>
 
                   <div class="grid grid-cols-2 lg:grid-cols-1 gap-5">
@@ -138,75 +140,29 @@
           <span class="inline-block h-[30px] w-[5px] bg-primary "></span>
            <h1 class="text-lg font-semibold">RECOMMENDATION</h1>
         </div>
-        <div class="relative">
-           <swiper
-           :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }"
-            class="mySwiper relative mt-5"
-            :modules="modules"
-            :breakpoints="{
-                '0': {
-                    slidesPerView: 2,
-                    spaceBetween:10
-                },
-                '568': {
-                    slidesPerView: 3,
-                    spaceBetween:10
-                },
-                '768': {
-                    slidesPerView: 4,
-                    spaceBetween:10
-                },
-                '1024': {
-                    slidesPerView: 5,
-                    spaceBetween:15
-                },
-                '1280': {
-                    slidesPerView: 6,
-                    spaceBetween:15
-                },
-            }"
-        >
-          <swiper-slide v-for="(data,index) in anime.details.recommendations" :key="index">
-              <router-link :to="{name:'info',params:{id:data.id}}">
-                  <div class="relative group">
-                    
-                     <div class="image-container w-full relative overflow-hidden block bg-secondary pb-[150%]">
-                      <div class="z-[99] absolute top-0 left-0 bottom-0 right-0 bg-gradient-to-t from-[#ffffff] via-transparent to-50%  dark:from-[#0c0a09] dark:via-transparent dark:to-50%"></div>
-                        <img :src="data.image" class="absolute z-2 top-0 left-0 right-0 bottom-0 h-full w-full object-cover"  :alt="data.title" />
-                      <div class="absolute z-10 transition  bg-opacity-0 group-hover:bg-muted/80 w-full h-full  bg-gray-100 dark:bg-transparent ">
-                        <Icon icon="ic:baseline-airplay" class="hidden text-primary group-hover:block text-5xl  absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] "/>
-                      </div>
-                     </div>
-                    <div class="mt-2">
-                        <p class="text-sm font-semibold">{{ data?.title }}</p>
-                        <div class="flex">
-                        <p class="text-gray-400 text-xs mt-1">{{ data.sub > 1 ? 'Sub' : '' }} 
-                          {{ data.sub > 1 && data.dub > 1 ? '|' :'' }} 
-                          {{ data.dub > 1 ? 'Dub' : '' }}  
-                          {{ data.duration ? ' | '+data.duration : '' }}
-                        </p>
-                        </div>
-                    </div>
-                  </div>
+          <SwiperVertical :list="anime.details.recommendations">
+              <template v-slot="{data,index}">
+                <router-link :to="{name:'info',params:{id:data.id}}">
+                    <Image :url="data.image">
+                      <template #footer>
+                        <p class="break-words text-sm lg:text-xl font-semibold mt-2">{{ data.title }}</p>
+                          <div class="flex justify-between ">
+                            <p class="text-gray-400 text-xs mt-1">Episode {{ data.sub }}</p>
+                            <p class="text-gray-400 text-xs mt-1 ">{{ data.sub > 1 ? 'Sub' : '' }} 
+                              {{ data.sub > 1 && data.dub > 1 ? '|' :'' }} 
+                              {{ data.dub > 1 ? 'Dub' : '' }}  
+                            </p>
+                          </div>
+                      </template>
+                    </Image>
                   </router-link>
-              </swiper-slide>
-          </swiper>
-         <div  class="custom-nav hidden lg:block">
-                  <button :class="{
-                      'custom-prev-light': mode === 'light',
-                      'custom-prev': mode === 'dark',
-                    }"><Icon class="text-primary dark:text-white" icon="material-symbols:arrow-left"/></button>
-                  <button :class="{
-                      'custom-next-light': mode === 'light',
-                      'custom-next': mode === 'dark',
-                    }"><Icon class="text-primary dark:text-white" icon="material-symbols:arrow-right"/></button>
-              </div>
-        </div>
+              </template>
+          </SwiperVertical>
       </div>
     </div>
     <div class="relative h-[400px] lg:h-[950px]" v-else>
         <span class="absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] ">
-          <span class="animate-spin border-2 border-white border-l-transparent rounded-full w-20 h-20  inline-block  "></span>
+          <span class="animate-spin border-2 border-black dark:border-white border-l-transparent rounded-full w-20 h-20  inline-block  "></span>
         </span>
     </div>
   </div>
@@ -228,7 +184,8 @@ import {useRoute} from 'vue-router';
 import axios_instance from '@/plugin/axios.js';
 import axios from 'axios';
 import { useColorMode } from '@vueuse/core';
-
+import Image from '../Components/Image.vue';
+import SwiperVertical from '../Components/SwiperVertical.vue';
 
 const mode = useColorMode();
 const route  = useRoute();

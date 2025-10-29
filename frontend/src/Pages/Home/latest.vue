@@ -1,38 +1,7 @@
 <script setup>
 import axios_instance from '@/plugin/axios.js';
 import { onMounted, ref } from 'vue';
-
-const config = {
-  pauseAutoplayOnHover: true,
-  wrapAround:true,
-  breakpointMode: 'carousel',
-  breakpoints:{
-    0:{
-      itemsToShow:2,
-      gap:10,
-    },
-    300:{
-      itemsToShow:3,
-      gap:10,
-    },
-    500:{
-      itemsToShow:4,
-      gap:10,
-    },
-    700:{
-      itemsToShow:5,
-      gap:15,
-    },
-    800:{
-      itemsToShow:5,
-      gap:15,
-    },
-    1200:{
-      itemsToShow:7,
-      gap:20,
-    },
-  }
-} 
+import Image from "@/Pages/Components/Image.vue";
 
 const data_list = ref([]);
 const loading = ref(false);
@@ -68,32 +37,27 @@ onMounted(()=>{
         </router-link>
       </div>
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4  lg:grid-cols-5 xl:grid-cols-6  gap-y-10 gap-x-5">
-        <div class="group relative" v-for="(data,index) in data_list" :key="index">
-            <router-link class="h-full " :to="{name:'watch',params:{id:data.id,episode_id:data.sub}}">
-              <div>
-                  <div class="image-container w-full relative overflow-hidden block bg-secondary pb-[150%]">
-                    <div class="z-[99] absolute top-0 left-0 bottom-0 right-0 bg-gradient-to-t from-[#ffffff] via-transparent to-50%  dark:from-[#000000] dark:via-transparent dark:to-50%"></div>
-                    <img :src="data.image" class="absolute z-2 top-0 left-0 right-0 bottom-0 h-full w-full object-cover"  :alt="data.title" />
-                    <div class="absolute z-10 transition  bg-opacity-0 group-hover:bg-muted/80 w-full h-full  bg-gray-100 dark:bg-transparent ">
-                      <Icon icon="ic:baseline-airplay" class="hidden text-primary group-hover:block text-5xl  absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] "/>
+        <div class="relative" v-for="(data,index) in data_list" :key="index">
+            <router-link class="h-full" :to="{name:'watch',params:{id:data.id,episode_id:data.sub}}">
+              <Image :url="data.image">
+                <template #footer>
+                  <p class="break-words text-sm lg:text-xl font-semibold mt-2">{{ data.title }}</p>
+                    <div class="flex justify-between ">
+                      <p class="text-gray-400 text-xs mt-1">Episode {{ data.sub }}</p>
+                      <p class="text-gray-400 text-xs mt-1 ">{{ data.sub > 1 ? 'Sub' : '' }} 
+                        {{ data.sub > 1 && data.dub > 1 ? '|' :'' }} 
+                        {{ data.dub > 1 ? 'Dub' : '' }}  
+                      </p>
                     </div>
-                  </div>
-                <p class="break-words text-sm lg:text-xl font-semibold mt-2">{{ data.title }}</p>
-                <div class="flex justify-between ">
-                  <p class="text-gray-400 text-xs mt-1">Episode {{ data.sub }}</p>
-                  <p class="text-gray-400 text-xs mt-1 ">{{ data.sub > 1 ? 'Sub' : '' }} 
-                    {{ data.sub > 1 && data.dub > 1 ? '|' :'' }} 
-                    {{ data.dub > 1 ? 'Dub' : '' }}  
-                  </p>
-                </div>
-              </div>
+                </template>
+              </Image>
             </router-link>
           </div>
         </div>
     </div>
     <div class="relative h-[500px] lg:h-[200px]" v-else>
         <span class="absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] ">
-          <span class="animate-spin border-2 border-white border-l-transparent rounded-full w-20 h-20  inline-block  "></span>
+          <span class="animate-spin border-2 border-black dark:border-white border-l-transparent rounded-full w-20 h-20  inline-block  "></span>
         </span>
     </div>
   </div>
