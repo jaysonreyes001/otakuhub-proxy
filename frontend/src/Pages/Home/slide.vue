@@ -90,9 +90,9 @@ onMounted(()=>{
                   class="absolute top-0 left-0 h-full w-full inset-shadow-custom2"></div> -->
                   <div class="absolute z-[999] top-0 left-0 w-full h-full ">
                     <div class="flex items-center h-full  w-[350px] md:w-[600px] lg:w-[800px]">
-                      <div class="ml-16 space-y-3 md:space-y-5">
+                      <div class="ml-16 space-y-1 md:space-y-5">
                         <p class="text-gray-700 dark:text-primary font-semibold text-md lg:text-2xl">#{{ index +1 }} Spotlight</p>
-                        <h1 class="text-lg  line-clamp-4 md:text-2xl lg:text-5xl dark:text-white text-primary font-bold">{{ spotlight.title }}</h1>
+                        <h1 class="text-lg line-clamp-4 md:text-2xl lg:text-5xl dark:text-white text-primary font-bold">{{ spotlight.title }}</h1>
                         <div class="flex gap-x-5">
                           <div class="flex items-center text-gray-700 dark:text-gray-200 text-xs md:text-xl" v-if="spotlight.type">
                             <Icon icon="mdi:play" class="text-base md:text-xl"/>
