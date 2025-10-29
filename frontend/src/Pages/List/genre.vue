@@ -110,7 +110,7 @@
                               </button>
                               
                          </div>
-                         <button :disabled="current_page >= total_page ? true : false" @click="pages(current_page+=1)"  type="button" class="min-h-9.5 min-w-9.5 py-2 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm rounded-lg text-gray-800 hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10" aria-label="Next">
+                         <button :disabled="current_page >= list_details.totalPages ? true : false" @click="pages(current_page+=1)"  type="button" class="min-h-9.5 min-w-9.5 py-2 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm rounded-lg text-gray-800 hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10" aria-label="Next">
                          <span class="hidden lg:block">Next</span>
                          <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                               <path d="m9 18 6-6-6-6"></path>
@@ -123,24 +123,19 @@
 </template>
 <script setup>
 import axios_instance from "@/plugin/axios.js";
-import { computed, onMounted, reactive, ref, watch } from "vue";
+import { computed, onMounted, reactive, ref } from "vue";
 import { useRoute } from "vue-router";
 const route = useRoute();
 const loading = ref(false);
 
 const current_page = ref(1);
 const pages_number = ref([]);
-const total_page = ref(0);
 let list_details = reactive({});
 
 const get_list = async () => {
      loading.value = true;
-     list_details = {};
      await axios_instance.get(`/genre/${route.params.type}?page=${current_page.value}`)
      .then(function(response){
-          if(total_page.value == 0){
-               total_page.value = response.data.totalPages
-          }
           list_details = response.data;
           
      })
@@ -150,6 +145,15 @@ const get_list = async () => {
      })
      loading.value = false;
 }
+
+const title = computed(()=>{
+     let title_ = "";
+     if(route.params.type == 'recent-episodes'){
+          title_ = 'LATEST EPISODE';
+     }
+     return title_;
+})
+
 const pages = (page_) => {
      window.scrollTo(0,0);
      get_list();
@@ -170,17 +174,13 @@ const prev_page = () => {
 const next_page = () => {
      let page_arr = [];
      for (let index = current_page.value + 1 ; current_page.value + 2 >= index; index++) {
-          if(index >= total_page){
+          if(index >= list_details.totalPages){
                break;
           }
           page_arr.push(index)
      }
      return page_arr;
 }
-
-watch(()=>route.params.type,(newV,oldV)=>{
-     get_list();
-})
 
 onMounted(()=>{
     pages(current_page.value)
