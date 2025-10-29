@@ -69,9 +69,9 @@ onMounted(()=>{
           <swiper-slide class="relative" v-for="(spotlight,index) in spotlight_list" :key="index">
             <div lass="relative">
               <div class="image-container w-full relative overflow-hidden block bg-secondary pb-[70%] lg:pb-[45%]">
-              <div class="z-[99] absolute top-0 left-0 bottom-0 right-0 bg-gradient-to-t from-[#ffffff] via-transparent to-[#ffffff]  dark:from-[#000000] dark:via-transparent dark:to-[#000000]"></div>
-              <div class="z-[99] absolute top-0 left-0 bottom-0 right-0 bg-gradient-to-r from-[#ffffff] via-transparent to-100% dark:from-[#000000] dark:via-transparent dark:to-100%"></div>
-              <div class="z-[99] absolute top-0 left-0 bottom-0 right-0 bg-gradient-to-l dark:from-[#000000] dark:via-transparent dark:to-5%"></div>
+              <div class="z-[99] absolute top-0 left-0 bottom-0 right-0 bg-gradient-to-t from-[#ffffff] via-transparent to-[#ffffff]  dark:from-[#0c0a09] dark:via-transparent dark:to-[#000000]"></div>
+              <div class="z-[99] absolute top-0 left-0 bottom-0 right-0 bg-gradient-to-r from-[#ffffff] via-transparent to-100% dark:from-[#0c0a09] dark:via-transparent dark:to-100%"></div>
+              <div class="z-[99] absolute top-0 left-0 bottom-0 right-0 bg-gradient-to-l dark:from-[#0c0a09] dark:via-transparent dark:to-5%"></div>
                 <img :src="spotlight.banner" class="absolute z-2 top-0 left-0 right-0 bottom-0 h-full w-full object-cover"  :alt="spotlight.title" />
               </div>
                   <div class="absolute z-[999] top-0 left-0 w-full h-full ">
@@ -116,7 +116,7 @@ onMounted(()=>{
             <button class="slide-next" :class="{
                 'custom-next-light': mode === 'light',
                 'custom-next': mode === 'dark',
-                'slide-next':true
+                'slide-next':tr
               }"><Icon class="text-primary dark:text-white" icon="material-symbols:chevron-right-rounded"/></button>
         </div>
     </div>
