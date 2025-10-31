@@ -52,7 +52,7 @@ onMounted(()=>{
     </div>
     <div class="relative h-[250px]" v-else>
         <span class="absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] ">
-          <span class="animate-spin border-2 border-black dark:border-white border-l-transparent rounded-full w-20 h-20  inline-block  "></span>
+          <span class="animate-spin border-2 border-black dark:border-white dark:border-l-transparent border-l-transparent rounded-full w-20 h-20  inline-block  "></span>
         </span>
     </div>
   </div>
