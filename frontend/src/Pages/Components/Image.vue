@@ -6,6 +6,7 @@
                     <img :src="props.url" class="absolute z-2 top-0 left-0 right-0 bottom-0 h-full w-full object-cover"  :alt="props.url" />
                     <div class="absolute z-10 transition  bg-opacity-0 group-hover:bg-muted/90 w-full h-full  bg-gray-100 dark:bg-transparent ">
                          <Icon icon="ic:baseline-airplay" class="hidden text-primary group-hover:block text-5xl  absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] "/>
+                         <Icon icon="material-symbols:favorite-outline" class="hidden text-primary group-hover:block text-5xl  absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] "/>
                     </div>
                </div>
                <slot name="footer"></slot>
