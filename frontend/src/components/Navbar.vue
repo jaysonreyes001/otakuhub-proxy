@@ -152,7 +152,7 @@ const isOpen = ref<boolean>(false);
                   @click="isOpen = false"
                   href="/list/search"
                 >
-                  {{ label }}
+                  Search
                 </a>
               </Button>
 
