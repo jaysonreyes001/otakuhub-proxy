@@ -77,7 +77,7 @@ onMounted(()=>{
                     <div class="flex items-center h-full  w-[300px] md:w-[600px] lg:w-[800px]">
                       <div class="ml-10 md:ml-16 space-y-1 md:space-y-5">
                         <p class="text-gray-700 dark:text-primary font-semibold text-md lg:text-2xl">#{{ index +1 }} Spotlight</p>
-                        <h1 class="text-lg line-clamp-3 md:text-2xl lg:text-5xl dark:text-white text-gray-800 font-bold">{{ spotlight.title }}</h1>
+                        <h1 class="text-lg line-clamp-3 md:text-2xl lg:text-5xl dark:text-white text-primary font-bold">{{ spotlight.title }}</h1>
                         <div class="flex gap-x-5">
                           <div class="flex items-center text-gray-700 dark:text-gray-200 text-xs md:text-xl" v-if="spotlight.type">
                             <Icon icon="mdi:play" class="text-base md:text-xl"/>
