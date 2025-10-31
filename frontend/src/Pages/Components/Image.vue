@@ -7,7 +7,7 @@
                     <div class="absolute z-10 transition  bg-opacity-0 group-hover:bg-muted/90 w-full h-full  bg-gray-100 dark:bg-transparent ">
                          <div class="h-full hidden items-center gap-2 justify-center group-hover:flex">
                               <Icon icon="ic:baseline-airplay" class="text-primary text-5xl"/>
-                              <Icon icon="material-symbols-light:favorite-outline" class="text-primary text-5xl"/>
+                              <Icon icon="ic:baseline-bookmark-border" class="text-primary text-5xl"/>
                          </div>
                     </div>
                </div>
