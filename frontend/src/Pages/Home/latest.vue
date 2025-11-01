@@ -36,7 +36,7 @@ onMounted(()=>{
           </button>
         </router-link>
       </div>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4  lg:grid-cols-5 xl:grid-cols-6  md:gap-y-5 gap-y-10 gap-x-5">
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4  lg:grid-cols-5 xl:grid-cols-6  md:gap-y-5 gap-y-10 gap-x-2 md:gap-x-5">
         <div class="relative" v-for="(data,index) in data_list" :key="index">
             <router-link class="h-full" :to="{name:'watch',params:{id:data.id,episode_id:data.sub}}">
               <Image :url="data.image">
